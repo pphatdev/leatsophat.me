@@ -1,26 +1,31 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import CopyPlugin from 'copy-webpack-plugin';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename        = fileURLToPath(import.meta.url);
-const __dirname         = path.dirname(__filename);
-export const dist       = path.resolve(__dirname, "dist")
-export const src        = path.resolve(__dirname, "src")
-export const nodeModule = path.resolve(__dirname, "node_modules")
-export const defaultCon = path.resolve(__dirname, 'src/index.js')
+const __filename    = fileURLToPath(import.meta.url);
+const __dirname     = path.dirname(__filename);
+const dist          = path.resolve(__dirname, "dist")
+const src           = path.resolve(__dirname, "src")
+const nodeModule    = path.resolve(__dirname, "node_modules")
+const defaultCon    = path.resolve(__dirname, 'src/js/index.js')
 
+const pageAboutMe   = path.resolve(__dirname, 'src/js/pages/about-me.js')
+const pageContact   = path.resolve(__dirname, 'src/js/pages/contact.js')
+const pageProject   = path.resolve(__dirname, 'src/js/pages/project.js')
 
 export default {
     devtool: "eval",
-    mode: 'production',
+    mode: 'development',
     entry: {
-        js: defaultCon
+        'main': defaultCon,
+        'about-me': pageAboutMe,
+        'contact': pageContact,
+        'project': pageProject,
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: 'js/[name]-static-[contenthash:10].js?id=[contenthash]',
         asyncChunks: false,
-        chunkFilename: '[name].[contenthash].bundle.js',
+        // chunkFilename: 'js/[name]-static-[contenthash:10].js?[contenthash]',
         clean: true
     },
     watchOptions: {
@@ -35,6 +40,22 @@ export default {
                     fullySpecified: false, // disable the behaviour
                 },
             },
+            {
+                test: /\.(png|jpe?g|gif|ico)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            publicPath: dist,
+                            name: 'assets/[name]_static_[contenthash:10].[ext]?[contenthash]',
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.webmanifest$/,
+                use: 'raw-loader',
+            }
         ],
     },
     devServer: {
@@ -47,7 +68,7 @@ export default {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Hello - Leat Sophat' ,
+            title: `Home - Leat Sophat` ,
             dir: `${dist}`,
             style: `${dist}/index.css`,
             filename: `${dist}/index.html`,
@@ -78,14 +99,9 @@ export default {
             template: `${src}/pages/contact.html`,
             detail: `Contact Leat sophat page`
         }),
-        new CopyPlugin({
-            patterns: [
-                {
-                    from: `${src}/assets/`,
-                    to: `${dist}/assets`
-                }
-            ],
-        }),
-    ]
+    ],
+    resolve: {
+        roots: [path.resolve(__dirname, "dist/assets")],
+    },
 };
 

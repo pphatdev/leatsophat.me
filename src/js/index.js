@@ -1,4 +1,13 @@
 import { loadFull } from "tsparticles";
+import { logo  } from './helpers/assets'
+import { header } from "./components/header.js";
+
+
+
+if (document.querySelector('head')) {
+    document.querySelector('head').innerHTML = header()
+    // document.getElementById('root').innerHTML = header()
+}
 
 (async() => {
     await loadFull(tsParticles);
@@ -7,7 +16,7 @@ import { loadFull } from "tsparticles";
         options: {
             background: {
                 color: "#000",
-                // image: "url(./assets/logo.png)",
+                image: logo,
                 repeat: "no-repeat",
                 size: "20%",
                 position: "50% 50%"
