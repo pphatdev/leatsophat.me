@@ -3,10 +3,15 @@ module.exports = {
     content: [
         './src/index.html',
         './src/**/*.{html,js}',
+        './src/pages/**/*.{html,js}',
     ],
     darkMode: "class",
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                'body': ["Poppins", "sans-serif"],
+            }
+        },
     },
     plugins: [],
 }

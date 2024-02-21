@@ -7,7 +7,7 @@ import { loadFull } from "tsparticles";
         options: {
             background: {
                 color: "#000",
-                image: "url(./assets/logo.png)",
+                // image: "url(./assets/logo.png)",
                 repeat: "no-repeat",
                 size: "20%",
                 position: "50% 50%"
