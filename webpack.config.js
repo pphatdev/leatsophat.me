@@ -74,6 +74,7 @@ export default {
     plugins: [
         new WebpackManifestPlugin({
             fileName: 'mainfest.json',
+            publicPath: '/'
         }),
         new WebpackPwaManifest({
             publicPath: '/',
@@ -93,11 +94,11 @@ export default {
                     src: `${src}/assets/profile.png`,
                     size: '1024x1024' // you can also use the specifications pattern
                 },
-                {
-                    src: `${src}/assets/favicon.ico`,
-                    size: '1024x1024',
-                    purpose: 'maskable'
-                }
+                // {
+                //     src: `${src}/assets/favicon.ico`,
+                //     size: '1024x1024',
+                //     purpose: 'maskable'
+                // }
             ],
             filename: "site.webmanifest"
         })
