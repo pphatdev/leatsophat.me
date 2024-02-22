@@ -5,13 +5,16 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { pages } from "./pages.config.js";
 
+import { config } from "dotenv";
+const env = config()?.parsed
+
 const me = {
-    fullName: "Leat Sophat",
-    shortName: "Sophat",
-    description: "This Website is showing about Mr.Leat Sophat",
-    start_url: "/",
-    background_color: "#ffffff",
-    theme_color: "#ffffff",
+    fullName: env?.APP_NAME_FULL || "Leat Sophat",
+    shortName: env?.APP_NAME_SHORT ||  "Sophat",
+    description: env?.APP_DESCRIPTION || "This Website is showing about Mr.Leat Sophat",
+    start_url: env?.APP_START_URL || "/",
+    background_color: env?.APP_BG_COLOR || "#ffffff",
+    theme_color: env?.APP_THEME_COLOR || "#ffffff",
 }
 
 const __filename    = fileURLToPath(import.meta.url);
@@ -22,17 +25,16 @@ const nodeModule    = path.resolve(__dirname, "node_modules")
 
 export default {
     devtool: "eval",
-    mode: 'development',
+    mode: env?.APP,
     entry: pages.reduce(
         (config, page) => {
-            config[page] = `./src/js/${page == "home" ? 'index' : `pages/${page}` }.js`;
+            config[page] = `./src/js/${page == "home" ? 'index' : `utils/${page}` }.js`;
             return config;
         }, {}
     ),
     output: {
         filename: 'js/[name]-static-[contenthash:10].js?id=[contenthash]',
         asyncChunks: false,
-        // chunkFilename: 'js/[name]-static-[contenthash:10].js?[contenthash]',
         clean: true
     },
     watchOptions: {
@@ -53,8 +55,8 @@ export default {
                     {
                         loader: 'file-loader',
                         options: {
-                            publicPath: dist,
-                            name: 'assets/[name]_static_[contenthash:10].[ext]?[contenthash]',
+                            publicPath: 'dist',
+                            name: 'assets/[name].[ext]',
                         },
                     },
                 ],
@@ -63,7 +65,7 @@ export default {
     },
     devServer: {
         static: {
-            directory: dist,
+            directory: 'dist',
             staticOptions: {},
             serveIndex: true,
             watch: true,
@@ -102,14 +104,24 @@ export default {
     ].concat(
         pages.map((page) =>
             new HtmlWebpackPlugin({
-                title: `${page} - Leat Sophat` ,
+                favicon: `${src}/assets/favicon.ico`,
+                title: `${page.toLocaleUpperCase()} - Leat Sophat`,
                 dir: `${dist}`,
-                style: `${dist}/index.css`,
                 filename: `${dist}/${page == "home" ? 'index.html' : `${page}/index.html`}`,
                 template: `${src}/${page == "home" ? 'index' : `pages/${page}`}.html`,
                 detail: `Hello Leat sophat page`,
                 chunks: [page],
                 inject: true,
+                templateParameters: {
+                    title: `${page.toLocaleUpperCase()} - Leat Sophat`,
+                    detail: `Hello Leat sophat page`,
+                    link: `https://hola.leatsophat.me/${page}`,
+                    cover: `${src}/assets/${ page??'home' }-cover.png`,
+                    appleTouchIcon: `${page == "home" ? '.' : `..`}/assets/apple-touch-icon.png`,
+                    icon16x16: `${page == "home" ? '.' : `..`}/assets/favicon-32x32.png`,
+                    icon32x32: `${page == "home" ? '.' : `..`}/assets/favicon-16x16.png`,
+                    style: `${page == "home" ? './index' : `../index`}.css`,
+                }
             })
         )
     ),

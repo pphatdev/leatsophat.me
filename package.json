@@ -30,6 +30,7 @@
     "webpack-pwa-manifest": "^4.3.0"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "lodash": "^4.17.21",
     "tsparticles": "^3.0.2"
   }
