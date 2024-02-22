@@ -5,16 +5,14 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { pages } from "./pages.config.js";
 
-import { config } from "dotenv";
-const env = config()?.parsed
 
 const me = {
-    fullName: env?.APP_NAME_FULL || "Leat Sophat",
-    shortName: env?.APP_NAME_SHORT ||  "Sophat",
-    description: env?.APP_DESCRIPTION || "This Website is showing about Mr.Leat Sophat",
-    start_url: env?.APP_START_URL || "/",
-    background_color: env?.APP_BG_COLOR || "#ffffff",
-    theme_color: env?.APP_THEME_COLOR || "#ffffff",
+    fullName: "Leat Sophat",
+    shortName:  "Sophat",
+    description: "This Website is showing about Mr.Leat Sophat",
+    start_url: "/",
+    background_color: "#ffffff",
+    theme_color: "#ffffff",
 }
 
 const __filename    = fileURLToPath(import.meta.url);
@@ -25,7 +23,7 @@ const nodeModule    = path.resolve(__dirname, "node_modules")
 
 export default {
     devtool: "eval",
-    mode: env?.APP || 'production',
+    mode: 'production',
     entry: pages.reduce(
         (config, page) => {
             config[page] = `./src/js/${page == "home" ? 'index' : `utils/${page}` }.js`;

@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "webpack serve --mode=development --open",
-    "style": "npx tailwindcss -i ./src/style.css -o ./dist/index.css --watch",
-    "build": "npx webpack --config webpack.config.js && npx tailwindcss -o ./dist/index.css --minify"
+    "watch": "npx tailwindcss -i ./src/style.css -o ./dist/index.css --watch",
+    "style": "npx tailwindcss -i ./src/style.css -o ./dist/index.css",
+    "build": "npx webpack --config webpack.config.js && npm run style"
   },
   "author": "pphatdev",
   "license": "MIT",

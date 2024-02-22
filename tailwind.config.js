@@ -10,6 +10,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 body: ["'Poppins'","'Open San'","'Sofia Sans Condensed'", "sans-serif"],
+                poppins: [ '"Poppins"', 'sans-serif']
             }
         },
     },
