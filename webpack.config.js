@@ -112,7 +112,7 @@ export default {
                 template: `${src}/${page == "home" ? 'index' : `pages/${page}`}.html`,
                 detail: `Hello Leat sophat page`,
                 chunks: [page],
-                inject: true,
+                inject: "body",
                 templateParameters: {
                     title: `${page.toLocaleUpperCase()} - Leat Sophat`,
                     detail: `Hello Leat sophat page`,
