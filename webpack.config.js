@@ -5,6 +5,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { pages } from "./pages.config.js";
 
+const __filename    = fileURLToPath(import.meta.url);
+const __dirname     = path.dirname(__filename);
+const dist          = path.resolve(__dirname, "dist")
+const src           = path.resolve(__dirname, "src")
+const nodeModule    = path.resolve(__dirname, "node_modules")
+
 const me = {
     fullName: "Leat Sophat",
     shortName:  "Sophat",
@@ -14,11 +20,6 @@ const me = {
     theme_color: "#ffffff",
 }
 
-const __filename    = fileURLToPath(import.meta.url);
-const __dirname     = path.dirname(__filename);
-const dist          = path.resolve(__dirname, "dist")
-const src           = path.resolve(__dirname, "src")
-const nodeModule    = path.resolve(__dirname, "node_modules")
 
 export default {
     devtool: "eval",
