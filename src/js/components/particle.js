@@ -1,13 +1,14 @@
 import { loadFull } from "tsparticles";
+import { logo  } from './helpers/assets'
 
-(async() => {
+export const start = (async() => {
     await loadFull(tsParticles);
     await tsParticles.load({
         id: "tsparticles",
         options: {
             background: {
                 color: "#000",
-                // image: "url(./assets/logo.png)",
+                image: logo,
                 repeat: "no-repeat",
                 size: "20%",
                 position: "50% 50%"
