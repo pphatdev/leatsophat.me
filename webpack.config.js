@@ -1,27 +1,34 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import { WebpackManifestPlugin } from "webpack-manifest-plugin";
+import WebpackPwaManifest from 'webpack-pwa-manifest'
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { pages } from "./pages.config.js";
+
+const me = {
+    fullName: "Leat Sophat",
+    shortName: "Sophat",
+    description: "This Website is showing about Mr.Leat Sophat",
+    start_url: "/",
+    background_color: "#ffffff",
+    theme_color: "#ffffff",
+}
 
 const __filename    = fileURLToPath(import.meta.url);
 const __dirname     = path.dirname(__filename);
 const dist          = path.resolve(__dirname, "dist")
 const src           = path.resolve(__dirname, "src")
 const nodeModule    = path.resolve(__dirname, "node_modules")
-const defaultCon    = path.resolve(__dirname, 'src/js/index.js')
-
-const pageAboutMe   = path.resolve(__dirname, 'src/js/pages/about-me.js')
-const pageContact   = path.resolve(__dirname, 'src/js/pages/contact.js')
-const pageProject   = path.resolve(__dirname, 'src/js/pages/project.js')
 
 export default {
     devtool: "eval",
     mode: 'development',
-    entry: {
-        'main': defaultCon,
-        'about-me': pageAboutMe,
-        'contact': pageContact,
-        'project': pageProject,
-    },
+    entry: pages.reduce(
+        (config, page) => {
+            config[page] = `./src/js/${page == "home" ? 'index' : `pages/${page}` }.js`;
+            return config;
+        }, {}
+    ),
     output: {
         filename: 'js/[name]-static-[contenthash:10].js?id=[contenthash]',
         asyncChunks: false,
@@ -41,7 +48,7 @@ export default {
                 },
             },
             {
-                test: /\.(png|jpe?g|gif|ico)$/i,
+                test: /\.(png|jpe?g|gif|ico|webmanifest)$/i,
                 use: [
                     {
                         loader: 'file-loader',
@@ -51,10 +58,6 @@ export default {
                         },
                     },
                 ],
-            },
-            {
-                test: /\.webmanifest$/,
-                use: 'raw-loader',
             }
         ],
     },
@@ -67,41 +70,50 @@ export default {
         },
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            title: `Home - Leat Sophat` ,
-            dir: `${dist}`,
-            style: `${dist}/index.css`,
-            filename: `${dist}/index.html`,
-            template: `${src}/index.html`,
-            detail: `Hello Leat sophat page`
+        new WebpackManifestPlugin({
+            fileName: 'mainfest.json',
         }),
-        new HtmlWebpackPlugin({
-            title: 'About - Leat Sophat' ,
-            dir: `${dist}`,
-            style: `${dist}/index.css`,
-            filename: `${dist}/about-me/index.html`,
-            template: `${src}/pages/about-me.html`,
-            detail: `About Leat sophat page`
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Project - Leat Sophat' ,
-            dir: `${dist}`,
-            style: `${dist}/index.css`,
-            filename: `${dist}/project/index.html`,
-            template: `${src}/pages/project.html`,
-            detail: `Project by Leat Sophat`
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Contact - Leat Sophat' ,
-            dir: `${dist}`,
-            style: `${dist}/index.css`,
-            filename: `${dist}/contact/index.html`,
-            template: `${src}/pages/contact.html`,
-            detail: `Contact Leat sophat page`
-        }),
-    ],
+        new WebpackPwaManifest({
+            publicPath: '/',
+            name: me?.fullName,
+            short_name: me?.shortName,
+            description: me?.description,
+            start_url: me?.start_url,
+            background_color: me?.background_color,
+            theme_color: me?.theme_color,
+            crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+            icons: [
+                {
+                    src: `${src}/assets/android-chrome-512x512.png`,
+                    sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+                },
+                {
+                    src: `${src}/assets/profile.png`,
+                    size: '1024x1024' // you can also use the specifications pattern
+                },
+                {
+                    src: `${src}/assets/favicon.ico`,
+                    size: '1024x1024',
+                    purpose: 'maskable'
+                }
+            ],
+            filename: "site.webmanifest"
+        })
+    ].concat(
+        pages.map((page) =>
+            new HtmlWebpackPlugin({
+                title: `${page} - Leat Sophat` ,
+                dir: `${dist}`,
+                style: `${dist}/index.css`,
+                filename: `${dist}/${page == "home" ? 'index.html' : `${page}/index.html`}`,
+                template: `${src}/${page == "home" ? 'index' : `pages/${page}`}.html`,
+                detail: `Hello Leat sophat page`,
+                chunks: [page],
+                inject: true,
+            })
+        )
+    ),
     resolve: {
         roots: [path.resolve(__dirname, "dist/assets")],
     },
 };
-
