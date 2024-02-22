@@ -5,7 +5,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { pages } from "./pages.config.js";
 
-
 const me = {
     fullName: "Leat Sophat",
     shortName:  "Sophat",
@@ -48,7 +47,7 @@ export default {
                 },
             },
             {
-                test: /\.(png|jpe?g|gif|ico|webmanifest)$/i,
+                test: /\.(png|jpe?g|gif|ico|webp)$/i,
                 use: [
                     {
                         loader: 'file-loader',
@@ -85,18 +84,29 @@ export default {
             crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
             icons: [
                 {
-                    src: `${src}/assets/android-chrome-512x512.png`,
+                    src: `${page == "home" ? '.' : `..`}/assets/android-chrome-512x512.png`,
                     sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
                 },
                 {
-                    src: `${src}/assets/profile.png`,
+                    src: `${page == "home" ? '.' : `..`}/assets/profile.png`,
                     size: '1024x1024' // you can also use the specifications pattern
+                }
+            ],
+            screenshots: [
+                {
+                    src: `${page == "home" ? '.' : `..`}/assets/screenshots-1.webp`,
+                    sizes: "1280x720",
+                    type: "image/webp",
+                    form_factor: "wide",
+                    label: "Light Mode"
                 },
-                // {
-                //     src: `${src}/assets/favicon.ico`,
-                //     size: '1024x1024',
-                //     purpose: 'maskable'
-                // }
+                {
+                    src: `${page == "home" ? '.' : `..`}/assets/screenshots-2.webp`,
+                    sizes: "1280x720",
+                    type: "image/webp",
+                    form_factor: "wide",
+                    label: "Dark Mode"
+                }
             ],
             filename: "site.webmanifest"
         })
@@ -115,7 +125,7 @@ export default {
                     title: `${page.toLocaleUpperCase()} - Leat Sophat`,
                     detail: `Hello Leat sophat page`,
                     link: `https://hola.leatsophat.me/${page}`,
-                    cover: `${src}/assets/${ page??'home' }-cover.png`,
+                    cover: `${page == "home" ? '.' : `..`}/assets/screenshots-2.webp`,
                     appleTouchIcon: `${page == "home" ? '.' : `..`}/assets/apple-touch-icon.png`,
                     icon16x16: `${page == "home" ? '.' : `..`}/assets/favicon-32x32.png`,
                     icon32x32: `${page == "home" ? '.' : `..`}/assets/favicon-16x16.png`,

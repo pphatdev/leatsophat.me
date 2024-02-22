@@ -6,6 +6,8 @@ import fav32 from '../../assets/favicon-32x32.png'
 import favApple from '../../assets/apple-touch-icon.png'
 import fav192 from '../../assets/android-chrome-192x192.png'
 import fav512 from '../../assets/android-chrome-512x512.png'
+import screenShots1 from '../../assets/screenshots-1.webp'
+import screenShots2 from '../../assets/screenshots-2.webp'
 
 export {
     logo,
@@ -15,5 +17,7 @@ export {
     fav32,
     favApple,
     fav192,
-    fav512
+    fav512,
+    screenShots1,
+    screenShots2
 }

@@ -1,3 +1,5 @@
+import "./helpers/assets";
+
 export const toggleTheme = () => {
     if (document.body.classList.contains("dark"))
         document.body.classList.remove("dark");
