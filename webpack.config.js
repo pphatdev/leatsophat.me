@@ -84,24 +84,24 @@ export default {
             crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
             icons: [
                 {
-                    src: `${page == "home" ? '.' : `..`}/assets/android-chrome-512x512.png`,
+                    src: `${src}/assets/android-chrome-512x512.png`,
                     sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
                 },
                 {
-                    src: `${page == "home" ? '.' : `..`}/assets/profile.png`,
+                    src: `${src}/assets/profile.png`,
                     size: '1024x1024' // you can also use the specifications pattern
                 }
             ],
             screenshots: [
                 {
-                    src: `${page == "home" ? '.' : `..`}/assets/screenshots-1.webp`,
+                    src: `./assets/screenshots-1.webp`,
                     sizes: "1280x720",
                     type: "image/webp",
                     form_factor: "wide",
                     label: "Light Mode"
                 },
                 {
-                    src: `${page == "home" ? '.' : `..`}/assets/screenshots-2.webp`,
+                    src: `./assets/screenshots-2.webp`,
                     sizes: "1280x720",
                     type: "image/webp",
                     form_factor: "wide",
