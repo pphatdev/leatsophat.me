@@ -124,7 +124,7 @@ export default {
                 templateParameters: {
                     title: `${page.toLocaleUpperCase()} - Leat Sophat`,
                     detail: `Hello Leat sophat page`,
-                    link: `https://hola.leatsophat.me/${page}`,
+                    link: `https://hola.leatsophat.me/${page == "home" ? "" :page}`,
                     cover: `${page == "home" ? '.' : `..`}/assets/screenshots-2.webp`,
                     appleTouchIcon: `${page == "home" ? '.' : `..`}/assets/apple-touch-icon.png`,
                     icon16x16: `${page == "home" ? '.' : `..`}/assets/favicon-32x32.png`,
