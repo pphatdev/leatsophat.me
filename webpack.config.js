@@ -25,7 +25,7 @@ const nodeModule    = path.resolve(__dirname, "node_modules")
 
 export default {
     devtool: "eval",
-    mode: env?.APP,
+    mode: env?.APP || 'production',
     entry: pages.reduce(
         (config, page) => {
             config[page] = `./src/js/${page == "home" ? 'index' : `utils/${page}` }.js`;
