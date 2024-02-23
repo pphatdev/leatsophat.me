@@ -1,30 +1,19 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import { WebpackManifestPlugin } from "webpack-manifest-plugin";
-import WebpackPwaManifest from 'webpack-pwa-manifest'
 import path from 'path';
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import WebpackPwaManifest from 'webpack-pwa-manifest'
+import { WebpackManifestPlugin } from "webpack-manifest-plugin";
 import { fileURLToPath } from 'url';
 import { pages } from "./pages.config.js";
+import { rules } from "./rules.config.js";
+import { me } from './me.config.js';
 import { icons, screenshots } from "./src/js/helpers/webmanifest.js";
+import { dots, slugs } from './src/js/helpers/config-path.js';
 
 const __filename    = fileURLToPath(import.meta.url);
 const __dirname     = path.dirname(__filename);
 const dist          = path.resolve(__dirname, "dist")
 const src           = path.resolve(__dirname, "src")
 const nodeModule    = path.resolve(__dirname, "node_modules")
-
-const dots = (params, value) => params == value ? '.' : '..'
-const slugs = (params, value) => params == value ? 'index' : `pages/${params}`
-
-const me = {
-    fullName: "Leat Sophat",
-    shortName:  "Sophat",
-    description: "This Website is showing about Mr.Leat Sophat",
-    start_url: "/",
-    background_color: "#ffffff",
-    theme_color: "#ffffff",
-    domain: "https://hola.leatsophat.me"
-}
-
 
 export default {
     devtool: "eval",
@@ -44,27 +33,7 @@ export default {
         ignored: nodeModule,
     },
     module: {
-        rules: [
-            {
-                test: /\.m?js$/,
-                exclude: /node_modules/,
-                resolve: {
-                    fullySpecified: false, // disable the behaviour
-                },
-            },
-            {
-                test: /\.(png|jpe?g|gif|ico|webp)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            publicPath: 'dist',
-                            name: 'assets/[name].[ext]',
-                        },
-                    },
-                ],
-            }
-        ],
+        rules: [].concat(rules),
     },
     devServer: {
         static: {
@@ -96,14 +65,14 @@ export default {
         pages.map((page) =>
             new HtmlWebpackPlugin({
                 favicon: `${src}/assets/favicon.ico`,
-                title: `${page.toLocaleUpperCase()} - Leat Sophat`,
+                title: `${page.toLocaleUpperCase()} - ${me?.fullName}`,
                 filename: `${dist}/${slugs(page, "home")}.html`,
                 template: `${src}/${page == "home" ? 'index' : `pages/${page}`}.html`,
                 detail: me?.description,
                 chunks: [page],
                 inject: "body",
                 templateParameters: {
-                    title: `${page.toLocaleUpperCase()} - Leat Sophat`,
+                    title: `${page.toLocaleUpperCase()} - ${me?.fullName}`,
                     detail: me?.description,
                     link: `${me?.domain}/${ page == "home" ? "":page }`,
                     cover: `${ dots(page, "home")}/assets/screenshots-2.webp`,
