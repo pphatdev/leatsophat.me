@@ -13,7 +13,7 @@ npm run start
 ```
 #### --watch style 🌈
 ```sh
-npm run style
+npm run watch
 ```
 
 #### Production 🚀🌈♻️

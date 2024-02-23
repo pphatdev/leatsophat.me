@@ -11,6 +11,6 @@ export const showProfile = () => {
     return `<img src="${fav192.replace("dist",'.')}" class="w-28 h-28 mb-7" alt="Leat Sophat">`
 }
 
-const buttonToggle = document.querySelector('[data-toggle]')
-buttonToggle.addEventListener('click', toggleTheme)
+const buttonToggle = document.querySelectorAll('[data-toggle]')
+Array.from(buttonToggle).forEach(button => button.addEventListener('click', toggleTheme))
 document.querySelector('[data-image]').innerHTML = showProfile()
