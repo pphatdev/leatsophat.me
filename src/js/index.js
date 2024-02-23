@@ -1,4 +1,4 @@
-import { fav192 } from "./helpers/assets";
+import { fav512 } from "./helpers/assets";
 
 export const toggleTheme = () => {
     if (document.body.classList.contains("dark"))
@@ -8,7 +8,7 @@ export const toggleTheme = () => {
 }
 
 export const showProfile = () => {
-    return `<img src="${fav192.replace("dist",'.')}" class="w-28 h-28 mb-7" alt="Leat Sophat">`
+    return `<img src="${fav512.replace("dist",'.')}" loading="lazy" class="w-36 h-36 sm:w-44 md:w-64 sm:h-44 md:h-64  mb-7" alt="Leat Sophat">`
 }
 
 const buttonToggle = document.querySelectorAll('[data-toggle]')
