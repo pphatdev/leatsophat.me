@@ -4,12 +4,16 @@ import WebpackPwaManifest from 'webpack-pwa-manifest'
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { pages } from "./pages.config.js";
+import { icons, screenshots } from "./src/js/helpers/webmanifest.js";
 
 const __filename    = fileURLToPath(import.meta.url);
 const __dirname     = path.dirname(__filename);
 const dist          = path.resolve(__dirname, "dist")
 const src           = path.resolve(__dirname, "src")
 const nodeModule    = path.resolve(__dirname, "node_modules")
+
+const dots = (params, value) => params == value ? '.' : '..'
+const slugs = (params, value) => params == value ? 'index' : `pages/${params}`
 
 const me = {
     fullName: "Leat Sophat",
@@ -18,6 +22,7 @@ const me = {
     start_url: "/",
     background_color: "#ffffff",
     theme_color: "#ffffff",
+    domain: "https://hola.leatsophat.me"
 }
 
 
@@ -83,32 +88,8 @@ export default {
             background_color: me?.background_color,
             theme_color: me?.theme_color,
             crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
-            icons: [
-                {
-                    src: `${src}/assets/android-chrome-512x512.png`,
-                    sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
-                },
-                {
-                    src: `${src}/assets/profile.png`,
-                    size: '1024x1024' // you can also use the specifications pattern
-                }
-            ],
-            screenshots: [
-                {
-                    src: `./assets/screenshots-1.webp`,
-                    sizes: "1280x720",
-                    type: "image/webp",
-                    form_factor: "wide",
-                    label: "Light Mode"
-                },
-                {
-                    src: `./assets/screenshots-2.webp`,
-                    sizes: "1280x720",
-                    type: "image/webp",
-                    form_factor: "wide",
-                    label: "Dark Mode"
-                }
-            ],
+            icons: [].concat(icons(src)),
+            screenshots: [].concat(screenshots),
             filename: "site.webmanifest"
         })
     ].concat(
@@ -116,21 +97,20 @@ export default {
             new HtmlWebpackPlugin({
                 favicon: `${src}/assets/favicon.ico`,
                 title: `${page.toLocaleUpperCase()} - Leat Sophat`,
-                dir: `${dist}`,
-                filename: `${dist}/${page == "home" ? 'index.html' : `${page}/index.html`}`,
+                filename: `${dist}/${slugs(page, "home")}.html`,
                 template: `${src}/${page == "home" ? 'index' : `pages/${page}`}.html`,
-                detail: `Hello Leat sophat page`,
+                detail: me?.description,
                 chunks: [page],
                 inject: "body",
                 templateParameters: {
                     title: `${page.toLocaleUpperCase()} - Leat Sophat`,
-                    detail: `Hello Leat sophat page`,
-                    link: `https://hola.leatsophat.me/${page == "home" ? "" :page}`,
-                    cover: `${page == "home" ? '.' : `..`}/assets/screenshots-2.webp`,
-                    appleTouchIcon: `${page == "home" ? '.' : `..`}/assets/apple-touch-icon.png`,
-                    icon16x16: `${page == "home" ? '.' : `..`}/assets/favicon-32x32.png`,
-                    icon32x32: `${page == "home" ? '.' : `..`}/assets/favicon-16x16.png`,
-                    style: `${page == "home" ? './index' : `../index`}.css`,
+                    detail: me?.description,
+                    link: `${me?.domain}/${ page == "home" ? "":page }`,
+                    cover: `${ dots(page, "home")}/assets/screenshots-2.webp`,
+                    appleTouchIcon: `${ dots(page, "home") }/assets/apple-touch-icon.png`,
+                    icon16x16: `${ dots(page, "home") }/assets/favicon-32x32.png`,
+                    icon32x32: `${ dots(page, "home") }/assets/favicon-16x16.png`,
+                    style: `${ dots(page, "home") }/index.css`,
                 }
             })
         )
