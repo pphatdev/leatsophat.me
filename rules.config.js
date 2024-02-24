@@ -7,7 +7,7 @@ export const rules = [
         },
     },
     {
-        test: /\.(png|jpe?g|gif|ico|webp)$/i,
+        test: /\.(png|jpe?g|gif|ico|webp|svg)$/i,
         use: [
             {
                 loader: 'file-loader',
@@ -17,5 +17,17 @@ export const rules = [
                 },
             },
         ],
-    }
+    },
+    // {
+    //     test: /\.(svg|jpe?g|gif|ico|webp)$/i,
+    //     use: [
+    //         {
+    //             loader: 'raw-loader',
+    //             options: {
+    //                 publicPath: 'dist',
+    //                 name: 'assets/[name].[ext]',
+    //             },
+    //         },
+    //     ],
+    // }
 ]

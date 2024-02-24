@@ -37,7 +37,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
-<body class="dark:bg-slate-950 !scroll-smooth">
+<body class="dark:bg-slate-950 snap-proximity snap-y scroll-smooth focus-within:scroll-smooth">
 
     <header id="header" id="header" class="sticky top-0 z-20 w-full scroll-smooth backdrop-blur-sm dark:bg-white/5 bg-white/30">
         <nav class="flex items-center justify-between w-full max-w-6xl mx-auto">
@@ -48,11 +48,51 @@
                     </svg>
                 </a>
             </div>
-            <ul class="items-center justify-end hidden gap-4 md:flex">
-                <li><a href="/project" class="font-medium hover:text-primary-600 dark:text-white dark:hover:text-primary">Projects</a></li>
-                <li><a href="/contact" class="font-medium hover:text-primary-600 dark:text-white dark:hover:text-primary">Contact</a></li>
-                <li><a href="/about-me" class="font-medium hover:text-primary-600 dark:text-white dark:hover:text-primary">About Me</a></li>
-                <li><a href="https://blog.leatsophat.me/" class="font-medium hover:text-primary-600 dark:text-white dark:hover:text-primary">Blog</a></li>
+            <ul class="items-center justify-end hidden gap-1 md:flex">
+                <li class="justify-center hidden transition-all lg:flex sm:w-1/3 gap-x-2">
+                    <a href="/project" class="relative px-4 py-1 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
+                        Projects
+                        <div class="absolute inset-0 items-end hidden h-px overflow-hidden translate-y-8 rounded-full group-hover:flex">
+                            <div class="flex -mb-px h-[1px] w-full">
+                                <div class="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+                                <div class="-ml-[99%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="justify-center hidden transition-all lg:flex sm:w-1/3 gap-x-2">
+                    <a href="/contact" class="relative px-4 py-1 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
+                        Contact
+                        <div class="absolute inset-0 items-end hidden h-px overflow-hidden translate-y-8 rounded-full group-hover:flex">
+                            <div class="flex -mb-px h-[1px] w-full">
+                                <div class="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+                                <div class="-ml-[99%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="justify-center hidden transition-all lg:flex sm:w-1/3 gap-x-2">
+                    <a href="/about-me" class="relative px-4 py-1 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
+                        About Me
+                        <div class="absolute inset-0 items-end hidden h-px overflow-hidden translate-y-8 rounded-full group-hover:flex">
+                            <div class="flex -mb-px h-[1px] w-full">
+                                <div class="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+                                <div class="-ml-[99%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="justify-center hidden transition-all lg:flex sm:w-1/3 gap-x-2">
+                    <a href="https://blog.leatsophat.me/" class="relative px-4 py-1 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
+                        Blog
+                        <div class="absolute inset-0 items-end hidden h-px overflow-hidden translate-y-8 rounded-full group-hover:flex">
+                            <div class="flex -mb-px h-[1px] w-full">
+                                <div class="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+                                <div class="-ml-[99%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
             </ul>
             <div class="mr-4 ">
                 <a href="#" class="px-3 py-1 text-xs transition-colors border rounded-full sm:text-sm border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">Contact</a>
@@ -61,12 +101,12 @@
         </nav>
     </header>
 
-    <div class="relative dark:bg-slate-950 h-[calc(100vh_+2rem)] sm:h-[calc(100vh_+8px)]">
+    <div class="relative dark:bg-slate-950 snap-center h-[calc(100vh_+2rem)] min-h-[50rem] sm:h-[calc(100vh_+8px)]">
         <div class="relative flex flex-col items-center justify-center h-[calc(100vh_+2rem)] sm:h-[calc(100vh_+8px)] -mt-20 dark:bg-slate-950 transition-bg">
             <div class="absolute inset-0 overflow-hidden">
                 <div class="jumbo absolute -inset-[10px] opacity-50"></div>
             </div>
-            <div class="flex flex-col items-center justify-center w-full max-w-6xl px-4 pt-10 mx-auto text-center sm:pt-0 sm:items-start sm:justify-between sm:flex-row">
+            <div class="flex flex-col items-center justify-center w-full max-w-6xl px-4 pt-10 mx-auto text-center gap-7 sm:pt-0 sm:items-start sm:justify-between sm:flex-row">
                 <div class="block">
                     <h1 class="relative text-4xl font-bold leading-tight text-gray-800 break-words transition-colors sm:text-left md:text-6xl font-poppins sm:flex-row dark:text-white dark:opacity-80">
                         Hello I'm LEAT <span class="font-black text-primary-600">Sophat</span>
@@ -77,22 +117,28 @@
                     <p class="max-w-md py-4 mt-5 text-sm font-normal lg:max-w-xl md:text-lg sm:text-left dark:text-primary-600 text-slate-600 font-body">
                         Welcome to my portfolio - Thoughts from a wandering mind. I am the senior front-end developer of TurboTech, a UI/UX designer. In my free time, I like design side projects and developing them.
                     </p>
-                    <div class="flex items-center justify-center w-full gap-3 text-center md:justify-start">
-                        <button type="button" class="px-4 py-1.5 text-sm transition-colors border rounded-full border-stone-200 drop-shadow-sm hover:bg-primary-800 text-white bg-primary-700 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">
-                            My Work
+                    <div class="flex items-center justify-center w-full gap-3 text-center sm:justify-start">
+                        <button type="button" class="px-4 active:bg-primary py-1.5 text-xs sm:text-sm transition-colors border rounded-lg border-stone-200 drop-shadow-sm hover:bg-primary-800 text-white bg-primary-700 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">
+                            My Works
                         </button>
-                        <button type="button" class="px-4 gap-2 flex items-center py-1.5 text-sm transition-colors border rounded-full border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">
+                        <button type="button" class="px-4 gap-2 active:bg-primary/10 flex items-center py-1.5 text-xs sm:text-sm transition-colors border rounded-lg border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">
                             <span>Download CV</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                             </svg>
+                            <div class="absolute inset-0 items-end h-5 overflow-hidden rounded-full translate-y-7 sm:translate-y-8 group-hover:flex">
+                                <div class="flex -mb-px h-[1px] w-full">
+                                    <div class="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+                                    <div class="-ml-[99%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+                                </div>
+                            </div>
                         </button>
                     </div>
                 </div>
-                <div data-image class="z-10 flex-shrink-0 order-first sm:order-last"></div>
+                <div data-image class="z-10 flex-shrink-0 order-first md:order-last"></div>
             </div>
             <div class="absolute flex flex-col items-center animate-bounce bottom-7">
-                <a href="#" class="px-3 py-1.5 text-sm transition-colors border rounded-full border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">
+                <a href="#trust" class="px-3 py-1.5 text-sm transition-colors border hidden md:block rounded-full border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
                     </svg>
@@ -101,20 +147,27 @@
         </div>
     </div>
 
-    <!-- <div class="my-10">
-        <div class="grid max-w-6xl grid-cols-1 gap-3 mx-auto sm:grid-cols-3">
-            <div class="flex gap-5 p-5 bg-white rounded-xl drop-shadow-xl">
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 p-1 text-primary/50 ring-2 ring-primary rounded-xl">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
-                    </svg>
-                </div>
-                <div class="w-full">
-                    <h1 class="font-medium text-primary-700">Built project</h1>
-                    <p>title</p>
-                </div>
-            </div>
+    <div id="trust" class="flex flex-col min-h-screen gap-5 dark:bg-slate-500 snap-center">
+        <div class="pt-5 my-5">
+            <p class="pb-5 text-base text-center font-display text-slate-900">What I'm coding with</p>
+            <ul role="list" id="languages" class="z-50 flex flex-wrap items-center justify-center max-w-5xl gap-5 mx-auto"></ul>
         </div>
-    </div> -->
+
+        <div class="my-5">
+            <p class="pb-5 text-base text-center font-display text-slate-900">What I just learnt</p>
+            <ul role="list" id="frameworks" class="z-50 flex flex-wrap items-center justify-center max-w-5xl gap-5 mx-auto"></ul>
+        </div>
+
+        <div class="my-5">
+            <p class="pb-5 text-base text-center font-display text-slate-900">What I styled with</p>
+            <ul role="list" id="styling" class="z-50 flex flex-wrap items-center justify-center max-w-5xl gap-5 mx-auto"></ul>
+        </div>
+
+        <div class="my-5">
+            <p class="pb-5 text-base text-center font-display text-slate-900">With online tools</p>
+            <ul role="list" id="onlinetools" class="z-50 flex flex-wrap items-center justify-center max-w-5xl gap-5 mx-auto"></ul>
+        </div>
+    </div>
+
 </body>
 </html>

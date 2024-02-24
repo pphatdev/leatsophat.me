@@ -4,8 +4,12 @@ export const activeHeader = () => {
     const match = header.querySelectorAll('ul>li [href]')
     Array.from(match).forEach( element => {
         const matchURL = element.getAttribute('href')
-        if (matchURL === currentURL) {
+        const div = element.querySelector('a>div')
+        if (matchURL.replaceAll('/','') === currentURL.replaceAll('/','')) {
             element.classList.add('active')
+            div.classList.remove('hidden')
+            div.classList.remove('translate-y-[14px]')
+            div.classList.add('translate-y-8', 'hover:translate-y-[14px]')
         }
     })
 }
