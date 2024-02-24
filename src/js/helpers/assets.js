@@ -36,9 +36,11 @@ import webpack from '../../assets/logo-webpack.svg'
 import wix from '../../assets/logo-wix.svg'
 import blogger from '../../assets/logo-blogger.svg'
 import firebase from '../../assets/logo-firebase.svg'
+import ellipsisVertical from '../../assets/ellipsis-vertical-outline.svg'
 
 export {
     nextjs,
+    ellipsisVertical,
     firebase,
     wix,
     blogger,
