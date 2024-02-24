@@ -8,7 +8,7 @@
 @layer base {
     * {
         @apply font-body;
-        /* scrollbar-width: none; */
+        scrollbar-width: none;
     }
 
     @keyframes jumbo {
@@ -75,4 +75,7 @@
         background-image: var(--stripesDark), var(--rainbow);
     }
 
+    ul>li .active {
+        @apply text-primary-600
+    }
 }
