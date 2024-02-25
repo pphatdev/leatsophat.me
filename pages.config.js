@@ -1,6 +1,6 @@
 export const pages = [
-    "home",
-    "project",
-    "contact",
-    "about-me",
-];
+    { name: "Home", route: "home" },
+    { name: "Project", route: "project" },
+    { name: "Contact", route: "contact" },
+    { name: "About Me", route: "about-me" },
+]
