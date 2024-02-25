@@ -20,9 +20,7 @@ export default {
     mode: 'production',
     entry: pages.reduce(
         (config, page) => {
-            if (page.internal) {
-                config[page?.route] = `./src/scripts/${page?.route == "home" ? 'index' : `${page?.route}` }.js`;
-            }
+            config[page?.route] = `./src/scripts/${page?.route == "home" ? 'index' : `${page?.route}` }.js`;
             return config;
         }, {}
     ),
@@ -64,30 +62,28 @@ export default {
             filename: "site.webmanifest"
         })
     ].concat(
-        pages.map((page) => {
-            if (page.internal) {
-                new HtmlWebpackPlugin({
-                    favicon: `${src}/assets/favicon.ico`,
+        pages.map((page) =>
+            new HtmlWebpackPlugin({
+                favicon: `${src}/assets/favicon.ico`,
+                title: `${page?.route.toLocaleUpperCase()} - ${me?.fullName}`,
+                filename: `${dist}/${page?.route == "home" ? 'index' : `${page?.route}/index`}.html`,
+                template: `${src}/views/${page?.route == "home" ? 'index' : `${page?.route}`}.html`,
+                detail: me?.description,
+                chunks: [page?.route],
+                minify: true,
+                inject: "body",
+                templateParameters: {
                     title: `${page?.route.toLocaleUpperCase()} - ${me?.fullName}`,
-                    filename: `${dist}/${page?.route == "home" ? 'index' : `${page?.route}/index`}.html`,
-                    template: `${src}/views/${page?.route == "home" ? 'index' : `${page?.route}`}.html`,
                     detail: me?.description,
-                    chunks: [page?.route],
-                    minify: true,
-                    inject: "body",
-                    templateParameters: {
-                        title: `${page?.route.toLocaleUpperCase()} - ${me?.fullName}`,
-                        detail: me?.description,
-                        link: `${me?.domain}/${ page?.route == "home" ? "":page?.route }`,
-                        cover: `${ dots(page?.route, "home")}/assets/screenshots-2.webp`,
-                        appleTouchIcon: `${ dots(page?.route, "home") }/assets/apple-touch-icon.png`,
-                        icon16x16: `${ dots(page?.route, "home") }/assets/favicon-32x32.png`,
-                        icon32x32: `${ dots(page?.route, "home") }/assets/favicon-16x16.png`,
-                        style: `${ dots(page?.route, "home") }/index.css`,
-                    }
-                })
-            }
-        })
+                    link: `${me?.domain}/${ page?.route == "home" ? "":page?.route }`,
+                    cover: `${ dots(page?.route, "home")}/assets/screenshots-2.webp`,
+                    appleTouchIcon: `${ dots(page?.route, "home") }/assets/apple-touch-icon.png`,
+                    icon16x16: `${ dots(page?.route, "home") }/assets/favicon-32x32.png`,
+                    icon32x32: `${ dots(page?.route, "home") }/assets/favicon-16x16.png`,
+                    style: `${ dots(page?.route, "home") }/index.css`,
+                }
+            })
+        )
     ),
     resolve: {
         roots: [path.resolve(__dirname, "dist/assets")],
