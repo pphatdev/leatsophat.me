@@ -6,8 +6,8 @@ import { fileURLToPath } from 'url';
 import { pages } from "./pages.config.js";
 import { rules } from "./rules.config.js";
 import { me } from './me.config.js';
-import { icons, screenshots } from "./src/js/helpers/webmanifest.js";
-import { dots } from './src/js/helpers/config-path.js';
+import { icons, screenshots } from "./src/helpers/webmanifest.js";
+import { dots } from './src/helpers/config-path.js';
 
 const __filename    = fileURLToPath(import.meta.url);
 const __dirname     = path.dirname(__filename);
@@ -20,7 +20,7 @@ export default {
     mode: 'production',
     entry: pages.reduce(
         (config, page) => {
-            config[page] = `./src/js/${page == "home" ? 'index' : `utils/${page}` }.js`;
+            config[page] = `./src/scripts/${page == "home" ? 'index' : `${page}` }.js`;
             return config;
         }, {}
     ),
@@ -67,7 +67,7 @@ export default {
                 favicon: `${src}/assets/favicon.ico`,
                 title: `${page.toLocaleUpperCase()} - ${me?.fullName}`,
                 filename: `${dist}/${page == "home" ? 'index' : `${page}/index`}.html`,
-                template: `${src}/${page == "home" ? 'index' : `pages/${page}`}.html`,
+                template: `${src}/views/${page == "home" ? 'index' : `${page}`}.html`,
                 detail: me?.description,
                 chunks: [page],
                 minify: true,

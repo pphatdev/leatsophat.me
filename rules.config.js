@@ -19,15 +19,11 @@ export const rules = [
         ],
     },
     // {
-    //     test: /\.(svg|jpe?g|gif|ico|webp)$/i,
-    //     use: [
-    //         {
-    //             loader: 'raw-loader',
-    //             options: {
-    //                 publicPath: 'dist',
-    //                 name: 'assets/[name].[ext]',
-    //             },
-    //         },
-    //     ],
-    // }
+    //     test: /\.html$/i,
+    //     loader: "html-loader",
+    //     options: {
+    //         // Disables attributes processing
+    //         sources: false,
+    //     },
+    // },
 ]
