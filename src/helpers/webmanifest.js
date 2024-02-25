@@ -19,10 +19,12 @@ export const screenshots = [
 export const icons = (src) => [
     {
         src: `${src}/assets/android-chrome-512x512.png`,
-        sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+        sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+        purpose: "maskable"
     },
     {
         src: `${src}/assets/profile.png`,
-        size: '1024x1024' // you can also use the specifications pattern
+        size: '1024x1024', // you can also use the specifications pattern
+        purpose: "maskable"
     }
 ]
