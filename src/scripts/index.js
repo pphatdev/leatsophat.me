@@ -1,11 +1,9 @@
+import "../helpers/assets";
 import { Header } from "../components/header.js";
-import { fav512 } from "../helpers/assets";
+import { showProfile } from "../components/hero-profile.js";
 import { codingWith, frameworksWith, onlineToolsWith, stylingWith } from "../helpers/candowith";
 import { sidebar, toggleTheme } from "../helpers/header.js";
 
-export const showProfile = () => {
-    return `<img src="${fav512.replace("dist",'.')}" loading="lazy" class="w-36 rounded-full sm:rounded-2xl h-36 sm:w-44 md:w-64 sm:h-44 md:h-64 my-7" alt="Leat Sophat">`
-}
 
 
 document.querySelector('[data-image]').innerHTML = showProfile()
