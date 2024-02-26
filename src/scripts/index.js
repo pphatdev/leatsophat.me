@@ -1,4 +1,3 @@
-import "../helpers/assets";
 import { Header } from "../components/header.js";
 import { showProfile } from "../components/hero-profile.js";
 import { codingWith, frameworksWith, onlineToolsWith, stylingWith } from "../helpers/candowith";
