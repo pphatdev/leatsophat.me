@@ -4,6 +4,7 @@ import { codingWith, frameworksWith, onlineToolsWith, stylingWith } from "../hel
 import { sidebar, toggleTheme } from "../helpers/header.js";
 
 
+import "../components/data.js"
 
 document.querySelector('[data-image]').innerHTML = showProfile()
 const buttonToggle = document.querySelectorAll('[data-toggle]')
