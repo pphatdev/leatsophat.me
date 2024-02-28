@@ -2,9 +2,15 @@ import { Header } from "../components/header.js";
 import { showProfile } from "../components/hero-profile.js";
 import { codingWith, frameworksWith, onlineToolsWith, stylingWith } from "../helpers/candowith";
 import { sidebar, toggleTheme } from "../helpers/header.js";
-
-
 import "../components/data.js"
+import { Cards } from "../components/cards.js";
+
+console.log(new Cards().view());
+
+// const recentBlog = document.querySelector("#recentBlog");
+// recentBlog.innerHTML = new Cards().view();
+
+
 
 document.querySelector('[data-image]').innerHTML = showProfile()
 const buttonToggle = document.querySelectorAll('[data-toggle]')

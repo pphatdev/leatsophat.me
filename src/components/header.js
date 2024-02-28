@@ -95,6 +95,6 @@ export class Header {
                 ${this.#menu().replaceAll('\n', ' ')}
                 ${this.#rightNavigation()}
             </nav>
-        `)
+        `.replaceAll(/(\s\s|\s\n|\s\t|\t\s)/g, ""))
     }
 }
