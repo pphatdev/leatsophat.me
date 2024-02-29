@@ -25,8 +25,8 @@ module.exports = {
                 }
             },
             fontFamily: {
-                body: ["'Poppins'","'Open San'","'Sofia Sans Condensed'", "sans-serif"],
-                poppins: [ '"Poppins"', 'sans-serif']
+                body: ["'Poppins'","'Open San'","'Sofia Sans Condensed'", "sans-serif", '"Suwannaphum"', "serif"],
+                poppins: [ '"Poppins"', 'sans-serif', '"Suwannaphum"', "serif"]
             }
         },
     },
