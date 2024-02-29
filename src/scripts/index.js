@@ -2,14 +2,8 @@ import { Header } from "../components/header.js";
 import { showProfile } from "../components/hero-profile.js";
 import { codingWith, frameworksWith, onlineToolsWith, stylingWith } from "../helpers/candowith";
 import { sidebar, toggleTheme } from "../helpers/header.js";
-import "../components/data.js"
-import { Cards } from "../components/cards.js";
-
-console.log(new Cards().view());
-
-// const recentBlog = document.querySelector("#recentBlog");
-// recentBlog.innerHTML = new Cards().view();
-
+import projects from "../components/projects.js";
+import templates from "../components/templates.js";
 
 
 document.querySelector('[data-image]').innerHTML = showProfile()
@@ -21,8 +15,11 @@ document.addEventListener('DomContentLoaded', stylingWith())
 document.addEventListener('DomContentLoaded', frameworksWith())
 document.addEventListener('DomContentLoaded', onlineToolsWith())
 document.addEventListener('DomContentLoaded', sidebar())
+document.addEventListener('DomContentLoaded', projects())
+document.addEventListener('DomContentLoaded', templates())
 
 
 if (typeof window !== "undefined") {
     window.toggleTheme = toggleTheme
+    window.projects = projects
 }
