@@ -6,7 +6,7 @@ export const templates = async () => {
     const card          = new Cards()
     const projects      = await getMyRepos()
     Array.from(projects).forEach( project => {
-        if (project.is_template) {
+        if (project.is_template && project.owner.login == "pphatdev" && !project.fork) {
             const url = {
                 html: project.html_url,
                 demo: project.homepage
