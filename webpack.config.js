@@ -44,6 +44,10 @@ export default {
         },
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            filename: `${dist}/googleff785c31669eafd5.html`,
+            template: `googleff785c31669eafd5.html`,
+        }),
         new WebpackManifestPlugin({
             fileName: 'mainfest.json',
             publicPath: '/'
