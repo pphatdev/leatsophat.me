@@ -6,7 +6,7 @@ export const homeProjects = async () => {
     const card = new Cards()
     const projects = await getMyRepos()
     projectWarrper.innerHTML = ""
-    Array.from(projects).slice(0, 4).forEach( project => {
+    Array.from(projects).slice(0,4).forEach( project => {
         if (!project.is_template && project.language && !project.fork) {
             projectWarrper.innerHTML += card.view(
                 {

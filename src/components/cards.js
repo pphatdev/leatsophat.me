@@ -16,7 +16,7 @@ export class Cards {
     }
 
     #content = (data = {}) => {
-        return(`<p class="leading-7 dark:text-white/70 line-clamp-3 pt-2">${data?.description}</p>`)
+        return(`<p class="leading-7 dark:text-white/70 line-clamp-2 pt-2">${data?.description}</p>`)
     }
 
     #footer = (data = {}) => {
