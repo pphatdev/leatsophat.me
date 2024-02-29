@@ -50,8 +50,8 @@ export const sidebar = () => {
 
 
 export const toggleTheme = () => {
-    if (document.body.classList.contains("dark"))
-        document.body.classList.remove("dark");
+    if (document.querySelector('html').classList.contains("dark"))
+        document.querySelector('html').classList.remove("dark");
     else
-        document.body.classList.add("dark");
+        document.querySelector('html').classList.add("dark");
 }
