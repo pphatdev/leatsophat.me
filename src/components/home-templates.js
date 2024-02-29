@@ -1,10 +1,11 @@
 import { Cards } from "./cards";
 import { getMyRepos } from "./data"
 
-export const templates = async () => {
-    const projectWarrper    = document.querySelector("#templates");
-    const card          = new Cards()
-    const projects      = await getMyRepos()
+export const homeTemplates = async () => {
+    const projectWarrper = document.querySelector("#templates");
+    const card = new Cards()
+    const projects = await getMyRepos()
+    projectWarrper.innerHTML = ""
     Array.from(projects).forEach( project => {
         if (project.is_template && project.owner.login == "pphatdev" && !project.fork) {
             const url = {
@@ -22,4 +23,4 @@ export const templates = async () => {
 
 }
 
-export default templates
+export default homeTemplates

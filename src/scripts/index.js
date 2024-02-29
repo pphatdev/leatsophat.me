@@ -3,8 +3,8 @@ import { showProfile } from "../components/hero-profile.js";
 import { codingWith, frameworksWith, onlineToolsWith, stylingWith } from "../helpers/candowith";
 import { sidebar, toggleTheme } from "../helpers/header.js";
 import '../components/data.js'
-import projects from "../components/home-projects.js";
-import templates from "../components/home-templates.js";
+import { homeProjects } from "../components/home-projects.js";
+import { homeTemplates } from "../components/home-templates.js";
 
 
 document.querySelector('[data-image]').innerHTML = showProfile()
@@ -16,8 +16,8 @@ document.addEventListener('DomContentLoaded', stylingWith())
 document.addEventListener('DomContentLoaded', frameworksWith())
 document.addEventListener('DomContentLoaded', onlineToolsWith())
 document.addEventListener('DomContentLoaded', sidebar())
-document.addEventListener('DomContentLoaded', projects())
-document.addEventListener('DomContentLoaded', templates())
+document.addEventListener('DomContentLoaded', homeProjects())
+document.addEventListener('DomContentLoaded', homeTemplates())
 
 
 if (typeof window !== "undefined") {

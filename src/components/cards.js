@@ -57,7 +57,7 @@ export class Cards {
     ) => {
         return(
             minify(`
-                <div class="flex flex-col relative min-h-44 h-full bg-white hover:bg-primary-50 items-start justify-start p-5 text-black drop-shadow-sm rounded-xl">
+                <div class="flex flex-col relative ring-2 ring-primary/20 min-h-44 h-full bg-white hover:bg-primary-50 items-start justify-start p-5 text-black drop-shadow-sm rounded-xl">
                     ${this.#header(title, time, description, language)}
                     ${this.#footer(footer)}
                 </div>
