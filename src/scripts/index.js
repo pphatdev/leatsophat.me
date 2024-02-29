@@ -2,8 +2,8 @@ import { Header } from "../components/header.js";
 import { showProfile } from "../components/hero-profile.js";
 import { codingWith, frameworksWith, onlineToolsWith, stylingWith } from "../helpers/candowith";
 import { sidebar, toggleTheme } from "../helpers/header.js";
-import projects from "../components/projects.js";
-import templates from "../components/templates.js";
+import projects from "../components/home-projects.js";
+import templates from "../components/home-templates.js";
 
 
 document.querySelector('[data-image]').innerHTML = showProfile()
