@@ -1,5 +1,5 @@
 import { Octokit } from "@octokit/core";
-export const octokit = new Octokit({ auth: `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` });
+export const octokit = new Octokit({ auth: `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` });
 
 
 export const getReposOrg = async () => {
