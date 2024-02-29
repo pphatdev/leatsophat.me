@@ -1,7 +1,7 @@
 import { Octokit } from "@octokit/core";
+export const octokit = new Octokit({ auth: `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` });
 
 export const getReposOrg = async () => {
-    const octokit = new Octokit({ auth: `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` });
     const response  = await octokit.request("GET /orgs/uixbase/repos", {
         org: "uixbase",
         type: "publish",
@@ -11,12 +11,11 @@ export const getReposOrg = async () => {
 
 
 export const getMyRepos = async () => {
-    const octokit = new Octokit({ auth: `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` });
     const response  = await octokit.request('GET /user/repos', {
         username: 'pphatdev',
         type: "publish",
         headers: {
-            'X-GitHub-Api-Version': '2022-11-28'
+            'X-GitHub-Api-Version': '2022-11-28',
         }
     })
     return response.data
@@ -24,9 +23,7 @@ export const getMyRepos = async () => {
 
 
 export const getReposByUser = async () => {
-    const octokit = new Octokit({ auth: `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` });
     const response  = await octokit.request('GET /users/pphatdev/repos', {
-        username: 'pphatdev',
         headers: {
             'X-GitHub-Api-Version': '2022-11-28'
         }
