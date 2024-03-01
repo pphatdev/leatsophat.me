@@ -17,7 +17,7 @@ export class Header {
                         ) ? "active" : null
                         return(`
                             <li>
-                                <a href="/${page?.route == "home" ? '': page?.route}" data-route-name="${page?.route}" class="${ activeByMenu } justify-center flex gap-x-2 relative px-4 py-1.5 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
+                                <a href="/${page?.route == "home" ? '': page?.route}" data-route-name="${page?.route}" class="${ activeByMenu } justify-center flex gap-x-2 relative px-2 py-1.5 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
                                     ${page?.name}
                                 </a>
                             </li>
