@@ -16,15 +16,9 @@ export class Header {
                             path.replaceAll('/','').toLocaleLowerCase() == "" && (page.route).toLocaleLowerCase() == "home"
                         ) ? "active" : null
                         return(`
-                            <li class="">
-                                <a href="/${page?.route == "home" ? '': page?.route}" data-route-name="${page?.route}" class="${ activeByMenu } justify-center flex  sm:w-1/3 gap-x-2 relative px-4 py-1.5 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
+                            <li>
+                                <a href="/${page?.route == "home" ? '': page?.route}" data-route-name="${page?.route}" class="${ activeByMenu } justify-center flex gap-x-2 relative px-4 py-1.5 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
                                     ${page?.name}
-                                    <div class="absolute inset-0 items-end hidden h-px overflow-hidden translate-y-8 rounded-full group-hover:flex">
-                                        <div class="flex -mb-px h-[1px] w-full">
-                                            <div class="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
-                                            <div class="-ml-[99%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
-                                        </div>
-                                    </div>
                                 </a>
                             </li>
                         `)
