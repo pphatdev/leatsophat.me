@@ -72,6 +72,12 @@ export default {
                 chunks: [page?.route],
                 minify: true,
                 inject: "body",
+                meta:{
+                    "Content-Security-Policy": "default-src 'self'; img-src https://*; child-src 'none';",
+                    "X-Content-Type-Options": "nosniff",
+                    "X-Frame-Options": "SAMEORIGIN",
+                    "X-XSS-Protection": "1; report=<reporting-uri>",
+                },
                 templateParameters: {
                     title: `${page?.route.toLocaleUpperCase()} - ${me?.fullName}`,
                     detail: me?.description,

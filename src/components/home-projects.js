@@ -6,7 +6,8 @@ export const homeProjects = async () => {
     const card = new Cards()
     const projects = await getMyRepos()
     projectWarrper.innerHTML = ""
-    Array.from(projects).slice(0, 4).forEach( project => {
+    Array.from(projects).slice(0, 5).forEach( project => {
+        console.log(project);
         if (!project.is_template && project.language && !project.fork) {
             const url = {
                 html: project.html_url,
