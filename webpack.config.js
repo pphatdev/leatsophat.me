@@ -69,7 +69,7 @@ export default {
         pages.map((page) =>
             new HtmlWebpackPlugin({
                 favicon: `${src}/assets/favicon.ico`,
-                title: `${page?.route.toLocaleUpperCase()} - ${me?.fullName}`,
+                title: `${page?.name} - ${me?.fullName}`,
                 filename: `${dist}/${page?.route == "home" ? 'index' : `${page?.route}/index`}.html`,
                 template: `${src}/views/${page?.route == "home" ? 'index' : `${page?.route}`}.html`,
                 detail: me?.description,
