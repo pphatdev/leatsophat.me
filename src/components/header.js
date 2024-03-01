@@ -12,12 +12,12 @@ export class Header {
                     page => {
                         const path = window.location.pathname
                         const activeByMenu = (
-                            path.replaceAll('/','') == page.name ||
-                            path.replaceAll('/','') == "" && page.route == "home"
+                            path.replaceAll('/','').toLocaleLowerCase() == (page.route).toLocaleLowerCase() ||
+                            path.replaceAll('/','').toLocaleLowerCase() == "" && (page.route).toLocaleLowerCase() == "home"
                         ) ? "active" : null
                         return(`
-                            <li class="justify-center flex transition-all sm:w-1/3 gap-x-2">
-                                <a href="/${page?.route == "home" ? '': page?.route}" data-route-name="${page?.route}" class="${ activeByMenu } relative px-4 py-1 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
+                            <li class="">
+                                <a href="/${page?.route == "home" ? '': page?.route}" data-route-name="${page?.route}" class="${ activeByMenu } justify-center flex  sm:w-1/3 gap-x-2 relative px-4 py-1.5 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
                                     ${page?.name}
                                     <div class="absolute inset-0 items-end hidden h-px overflow-hidden translate-y-8 rounded-full group-hover:flex">
                                         <div class="flex -mb-px h-[1px] w-full">
@@ -74,7 +74,6 @@ export class Header {
     #rightNavigation = () => {
         return (`
             <div class="flex items-center justify-end gap-3 mr-4">
-                <a href="#" class="px-3 py-1 text-xs transition-colors border rounded-full sm:text-sm border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">Contact</a>
                 <button type="button" onclick="toggleTheme()" class="px-3 py-1 text-sm transition-colors border rounded-full border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">🌞</button>
                 <button data-sidebar-toggle class="px-2 py-2 text-sm transition-colors border rounded-full sm:hidden border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 512 512">

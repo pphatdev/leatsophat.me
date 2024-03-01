@@ -2,7 +2,6 @@ import { Header } from "../components/header.js";
 import { showProfile } from "../components/hero-profile.js";
 import { codingWith, frameworksWith, onlineToolsWith, stylingWith } from "../helpers/candowith";
 import { sidebar, toggleTheme } from "../helpers/header.js";
-import '../components/data.js'
 import { homeProjects } from "../components/home-projects.js";
 import { homeTemplates } from "../components/home-templates.js";
 

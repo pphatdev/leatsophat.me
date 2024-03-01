@@ -8,19 +8,26 @@ export const homeTemplates = async () => {
     projectWarrper.innerHTML = ""
     Array.from(projects).forEach( project => {
         if (project.is_template && project.owner.login == "pphatdev" && !project.fork) {
-            const url = {
-                html: project.html_url,
-                demo: project.homepage
-            }
             projectWarrper.innerHTML += card.view(
-                project.name,
-                project.pushed_at,
-                project.description,
-                url
+                {
+                    header: {
+                        title: project?.name,
+                        date: project?.pushed_at
+                    },
+                    content: {
+                        description: project?.description
+                    },
+                    footer: {
+                        url: {
+                            html: project?.html_url,
+                            demo: project?.homepage
+                        },
+                        language: project?.language
+                    }
+                }
             )
         }
     })
-
 }
 
 export default homeTemplates
