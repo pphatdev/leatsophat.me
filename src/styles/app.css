@@ -11,6 +11,10 @@
         scrollbar-width: thin;
     }
 
+    p>a {
+        @apply hover:underline text-primary font-medium
+    }
+
     @keyframes jumbo {
         from {
             background-position: 50% 50%, 50% 50%;
