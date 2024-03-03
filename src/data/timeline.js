@@ -3,9 +3,6 @@ export const timelines = [
         title: "2023-Current",
         list: [
             {
-                title: "Promoted to Senior Front-End Developer",
-            },
-            {
                 title: "Learned about Ubuntu Server (Deployment for Laravel projects)",
             },
             {
@@ -16,6 +13,9 @@ export const timelines = [
             },
             {
                 title: "Decided to continue studying at Cambodian University for Specialties",
+            },
+            {
+                title: "Promoted to Senior Front-End Developer",
             },
         ]
     },
