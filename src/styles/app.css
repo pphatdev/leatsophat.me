@@ -80,6 +80,6 @@
     }
 
     ul>li .active {
-        @apply text-primary-600
+        @apply text-primary-600 dark:text-primary
     }
 }
