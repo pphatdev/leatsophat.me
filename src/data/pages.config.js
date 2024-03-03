@@ -2,7 +2,7 @@
 export const pages = [
     { name: "Home", route: "home" },
     { name: "Projects", route: "projects" },
-    { name: "About Me", route: "about-me" },
+    { name: "About Me", route: "about" },
 ]
 
 
@@ -10,5 +10,5 @@ export const pages = [
 export const modules = [
     { name: "Home", route: "home" },
     { name: "Projects", route: "projects" },
-    { name: "About Me", route: "about-me" },
+    { name: "About Me", route: "about" },
 ]

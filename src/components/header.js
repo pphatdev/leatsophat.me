@@ -1,4 +1,4 @@
-import { modules as pages } from "../../pages.config"
+import { modules as pages } from "../data/pages.config"
 export class Header {
 
     constructor() {

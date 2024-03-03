@@ -3,7 +3,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import WebpackPwaManifest from 'webpack-pwa-manifest'
 import { WebpackManifestPlugin } from "webpack-manifest-plugin";
 import { fileURLToPath } from 'url';
-import { pages } from "./pages.config.js";
+import { pages } from "./src/data/pages.config.js";
 import { rules } from "./rules.config.js";
 import { me } from './me.config.js';
 import { icons, screenshots } from "./src/helpers/webmanifest.js";
