@@ -1,6 +1,7 @@
 import fs from 'fs'
 import { Feed } from 'feed'
 import { me } from '../../me.config.js'
+import { ico, screenShots1 } from '../helpers/assets.js'
 
 const feed = new Feed({
     title: me.fullName,
@@ -8,9 +9,9 @@ const feed = new Feed({
     id: me.domain,
     link: me.domain,
     language: 'en',
-    image: `${me.domain}/favicon-32x32.png`,
-    favicon: `${me.domain}/favicon.ico`,
-    copyright: `All rights reserved ${new Date().getFullYear()}, Tailwind Labs`,
+    image: screenShots1.replace("dist",'.'),
+    favicon: ico.replace("dist",'.'),
+    copyright: `All rights reserved ${new Date().getFullYear()}, Leat Sophat`,
     feedLinks: {
         rss: `${me.domain}/feed.xml`,
         json: `${me.domain}/feed.json`,
