@@ -5,5 +5,5 @@ export const me = {
     start_url: "/",
     background_color: "#ffffff",
     theme_color: "#ffffff",
-    domain: "https://hola.leatsophat.me"
+    domain: "https://leatsophat.me"
 }
