@@ -69,7 +69,7 @@ export class Header {
         return (`
             <div class="flex items-center justify-end gap-3 mr-4">
                 <button type="button" onclick="toggleTheme()" class="px-3 py-1 text-sm transition-colors border rounded-full border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">🌞</button>
-                <button data-sidebar-toggle class="px-2 py-2 text-sm transition-colors border rounded-full sm:hidden border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">
+                <button data-sidebar-toggle aria-label="Menu" class="px-2 py-2 text-sm transition-colors border rounded-full sm:hidden border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 512 512">
                         <circle cx="256" cy="256" r="32" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
                         <circle cx="256" cy="416" r="32" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
