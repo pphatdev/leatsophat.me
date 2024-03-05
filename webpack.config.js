@@ -83,10 +83,10 @@ export default {
                     "X-XSS-Protection": "1; report=<reporting-uri>",
                 },
                 templateParameters: {
-                    title: `${page?.route.toLocaleUpperCase()} - ${me?.fullName}`,
+                    title: `${ page?.route.toLocaleUpperCase() } - ${ me?.fullName }`,
                     detail: me?.description,
-                    link: `${me?.domain}/${ page?.route == "home" ? "":page?.route }`,
-                    cover: `${ dots(page?.route, "home")}/assets/screenshots-2.webp`,
+                    link: `${ me?.domain }/${ page?.route == "home" ? "":page?.route }`,
+                    cover: `${ dots(page?.route, "home")}/assets/${ page?.route }.webp`,
                     appleTouchIcon: `${ dots(page?.route, "home") }/assets/apple-touch-icon.png`,
                     icon16x16: `${ dots(page?.route, "home") }/assets/favicon-32x32.png`,
                     icon32x32: `${ dots(page?.route, "home") }/assets/favicon-16x16.png`,

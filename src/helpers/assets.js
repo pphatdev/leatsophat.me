@@ -37,8 +37,14 @@ import wix from '../assets/icons/logo-wix.svg'
 import blogger from '../assets/icons/logo-blogger.svg'
 import firebase from '../assets/icons/logo-firebase.svg'
 import ellipsisVertical from '../assets/icons/ellipsis-vertical-outline.svg'
+import homeCover from '../assets/home.webp'
+import projectsCover from '../assets/projects.webp'
+import aboutCover from '../assets/about.webp'
 
 export {
+    homeCover,
+    projectsCover,
+    aboutCover,
     nextjs,
     ellipsisVertical,
     firebase,
