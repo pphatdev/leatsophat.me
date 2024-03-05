@@ -54,6 +54,19 @@
 
     <header id="header" class="sticky top-0 z-20 w-full scroll-smooth backdrop-blur-sm dark:bg-white/5 bg-white/50"></header>
     <div data-sidebar-backdrop class="fixed inset-0 z-50 hidden w-full h-full bg-white/70 dark:block/20 backdrop-blur-sm"></div>
+        <div data-sidebar-target class="fixed z-50 hidden w-full max-w-xs p-6 text-base font-semibold -translate-x-1/2 bg-white rounded-lg shadow-lg top-4 left-1/2 text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:highlight-white/5">
+            <button type="button" data-sidebar-toggle class="absolute flex items-center justify-center w-8 h-8 top-5 right-5 text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300" tabindex="0">
+                <span class="sr-only">Close navigation</span>
+                <svg viewBox="0 0 10 10" class="w-2.5 h-2.5 overflow-visible" aria-hidden="true">
+                    <path d="M0 0L10 10M10 0L0 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+            </button>
+            <ul class="space-y-6" id="menu"></ul>
+            <div class="mt-5 text-center">
+                <button data-theme-toggle class="px-3 py-1 mx-auto mt-10 text-sm transition-colors border rounded-full sm:mt-0 border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">🌞</button>
+            </div>
+        </div>
+    </div>
 
     <div class="relative flex flex-col items-center justify-center -mt-20 h-28 min-h-[10rem]">
         <div class="fixed inset-0 overflow-hidden -z-10">
@@ -62,7 +75,7 @@
     </div>
 
     <section>
-        <div class="py-10 bg-transparent">
+        <div class="bg-transparent md:py-10">
             <h1 class="text-2xl font-bold text-center uppercase dark:text-white md:text-5xl">My <span class="text-primary">Projects</span> </h1>
             <p class="max-w-2xl py-4 mx-auto my-5 text-sm font-normal text-center lg:max-w-xl md:text-lg dark:text-primary-600 text-slate-600 font-body">
                 What I built

@@ -21,5 +21,4 @@ document.addEventListener('DomContentLoaded', homeTemplates())
 
 if (typeof window !== "undefined") {
     window.toggleTheme = toggleTheme
-    // window.projects = projects
 }

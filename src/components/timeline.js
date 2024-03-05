@@ -5,10 +5,10 @@ const list = (data) => {
     return(data.map(item => {
         return(String(
             `<li>
-                <h2 class="py-3 dark:text-primary text-xl font-bold">${item?.title}</h2>
+                <h2 class="py-3 dark:text-primary md:text-xl text-sm font-bold">${item?.title}</h2>
                 <ul class="list-inside list-item dark:text-white/60">
                     ${item?.list.map(list => {
-                        return(`<li class="list-disc">${list?.title}</li>`)
+                        return(`<li class="list-disc text-xs sm:text-sm">${list?.title}</li>`)
                     })}
                 </ul>
             </li>`

@@ -1,8 +1,10 @@
 import { modules as pages } from "../data/pages.config"
+import { minify } from "../helpers/stringMinify"
 export class Header {
 
     constructor() {
         this.#navigation()
+        this.sidebar()
     }
 
     #menu = () => {
@@ -78,6 +80,27 @@ export class Header {
                 </button>
             </div>
         `)
+    }
+
+    menuList = () => {
+        return String(pages.map(
+            page => {
+                const path = window.location.pathname
+                const activeByMenu = (
+                    path.replaceAll('/','').toLocaleLowerCase() == (page.route).toLocaleLowerCase() ||
+                    path.replaceAll('/','').toLocaleLowerCase() == "" && (page.route).toLocaleLowerCase() == "home"
+                ) ? "text-primary" : null
+                return(`
+                    <li>
+                        <a class="hover:text-primary-500 ${activeByMenu} dark:hover:text-primary-400" href="${(page.route).toLocaleLowerCase() == "home" ? '/' : page?.route}">${page?.name}</a>
+                    </li>
+                `)
+            }
+        ))
+    }
+    sidebar = () => {
+        const sidebar       = document.querySelector('#menu')
+        sidebar.innerHTML   = minify(this.menuList()).replaceAll(/\>\s\,\</g, "><").replaceAll(/\>\,\</g, "><")
     }
 
     #navigation = () => {
