@@ -7,6 +7,10 @@ export class Header {
         this.sidebar()
     }
 
+    /**
+     * Create Munu List
+     * @returns
+     */
     #menu = () => {
         return(`
             <ul role="list"  class="items-center justify-end gap-1 hidden sm:flex">
@@ -30,6 +34,10 @@ export class Header {
         `)
     }
 
+    /**
+     * Brand Logo
+     * @returns
+     */
     #logo = () => {
         return(`
             <div class="flex-shrink-0 w-16 px-4 py-2">
@@ -67,6 +75,10 @@ export class Header {
     }
 
 
+    /**
+     * Right Navigation
+     * @returns
+     */
     #rightNavigation = () => {
         return (`
             <div class="flex items-center justify-end gap-3 mr-4">
@@ -82,6 +94,10 @@ export class Header {
         `)
     }
 
+    /**
+     * Menu List Item
+     * @returns
+     */
     menuList = () => {
         return String(pages.map(
             page => {
@@ -98,11 +114,18 @@ export class Header {
             }
         ))
     }
+
+    /**
+     * Apply sidebar
+     */
     sidebar = () => {
         const sidebar       = document.querySelector('#menu')
         sidebar.innerHTML   = minify(this.menuList()).replaceAll(/\>\s\,\</g, "><").replaceAll(/\>\,\</g, "><")
     }
 
+    /**
+     * Main Header Navigation
+     */
     #navigation = () => {
         const header = document.querySelector('#header')
         header.innerHTML = (`

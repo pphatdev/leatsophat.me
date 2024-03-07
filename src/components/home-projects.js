@@ -1,6 +1,10 @@
 import { Cards } from "./cards";
 import { getMyRepos } from "./data"
 
+/**
+ * Home Project Sections
+ * @returns
+ */
 export const homeProjects = async () => {
     const projectWarrper = document.querySelector("#projects");
     const card = new Cards()

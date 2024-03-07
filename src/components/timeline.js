@@ -1,6 +1,11 @@
 import { timelines } from "../data/timeline"
 import { minify } from "../helpers/stringMinify"
 
+
+/**
+ * List Timeline
+ * @returns
+ */
 const list = (data) => {
     return(data.map(item => {
         return(String(
@@ -16,6 +21,12 @@ const list = (data) => {
     }))
 }
 
+
+/**
+ * Apply Timeline
+ * @route /about
+ * @returns
+ */
 export const timeline = () => {
     const tartget = document.querySelector('#summary')
     tartget.innerHTML = minify(list(timelines)).replaceAll(/\>\,\</g, "><")

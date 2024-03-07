@@ -1,6 +1,10 @@
 import { Cards } from "./cards";
 import { getMyRepos } from "./data"
 
+/**
+ * Home Project Template Sections
+ * @returns
+ */
 export const homeTemplates = async () => {
     const projectWarrper = document.querySelector("#templates");
     const card = new Cards()

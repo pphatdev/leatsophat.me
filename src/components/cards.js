@@ -2,8 +2,13 @@ import { minify } from "../helpers/stringMinify"
 
 export class Cards {
 
-    constructor() { return this.view() }
+    constructor() { this.view() }
 
+    /**
+     * Card Header
+     * @param {Object} data
+     * @returns
+     */
     #header = (data = {}) => {
         const title = data?.title
         const date = new Date(data?.date);
@@ -15,10 +20,20 @@ export class Cards {
         `)
     }
 
+    /**
+     * Card Content
+     * @param {Object} data
+     * @returns
+     */
     #content = (data = {}) => {
         return(`<p class="leading-7 dark:text-white/70 line-clamp-2 pt-2">${data?.description}</p>`)
     }
 
+    /**
+     * Card Footer
+     * @param {Object} data
+     * @returns
+     */
     #footer = (data = {}) => {
         const url       = data?.url
         const language  = data?.language
@@ -41,6 +56,11 @@ export class Cards {
         `)
     }
 
+    /**
+     * Combine View
+     * @param {Object} data
+     * @returns
+     */
     view = ( data = {} ) => {
         return(
             minify(`
