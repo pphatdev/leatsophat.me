@@ -92,7 +92,7 @@ export class Header {
                 ) ? "text-primary" : null
                 return(`
                     <li>
-                        <a class="hover:text-primary-500 ${activeByMenu} dark:hover:text-primary-400" href="${(page.route).toLocaleLowerCase() == "home" ? '/' : page?.route}">${page?.name}</a>
+                        <a class="hover:text-primary-500 ${activeByMenu} dark:hover:text-primary-400" href="/${page.route == "home" ? '' : page?.route}">${page?.name}</a>
                     </li>
                 `)
             }
