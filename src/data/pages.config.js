@@ -4,6 +4,7 @@ export const pages = [
     { name: "Projects", route: "projects" },
     { name: "Skills", route: "skills" },
     { name: "About Me", route: "about" },
+    { name: "Not Found", route: "404" },
 ]
 
 
