@@ -5,8 +5,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "start:1": "webpack serve --mode=development --open",
-        "start": "webpack serve --mode=development --port 3000 --hot --host 0.0.0.0",
+        "start:local": "webpack serve --mode=development --open",
+        "start": "webpack serve --mode=development --open --port 3000 --hot --host 0.0.0.0",
         "watch": "npx tailwindcss -i ./src/styles/app.css -o ./dist/index.css --watch",
         "style": "npx tailwindcss -i ./src/styles/app.css -o ./dist/index.css",
         "build": "npx webpack --config webpack.config.js && npm run style && node ./src/scripts/build-rss.js"
