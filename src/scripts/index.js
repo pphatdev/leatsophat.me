@@ -4,6 +4,7 @@ import { codingWith, frameworksWith, onlineToolsWith, stylingWith } from "../hel
 import { sidebar, toggleTheme } from "../helpers/header.js";
 import { homeProjects } from "../components/home-projects.js";
 import { homeTemplates } from "../components/home-templates.js";
+import { renderCanvas } from "../components/render-canvas.js";
 
 
 document.querySelector('[data-image]').innerHTML = showProfile()
@@ -17,8 +18,10 @@ document.addEventListener('DomContentLoaded', onlineToolsWith())
 document.addEventListener('DomContentLoaded', sidebar())
 document.addEventListener('DomContentLoaded', homeProjects())
 document.addEventListener('DomContentLoaded', homeTemplates())
+document.addEventListener('DomContentLoaded', renderCanvas())
 
 
 if (typeof window !== "undefined") {
     window.toggleTheme = toggleTheme
+    window.renderCanvas = renderCanvas
 }
