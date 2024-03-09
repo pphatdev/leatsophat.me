@@ -13,27 +13,29 @@ export class Header {
      */
     #menu = () => {
         return(
-            String(`
-                <ul role="list" class="items-center justify-end gap-1 hidden sm:flex">
-                    ${String(pages.map(
-                        page => {
-                            const path = window.location.pathname
-                            const activeByMenu = (
-                                path.replaceAll('/','').toLocaleLowerCase() == (page.route).toLocaleLowerCase() ||
-                                path.replaceAll('/','').toLocaleLowerCase() == "" && (page.route).toLocaleLowerCase() == "home"
-                            ) ? "active" : null
-                            return(`
-                                <li>
-                                    <a href="/${page?.route == "home" ? '': page?.route}" data-route-name="${page?.route}" class="${ activeByMenu } justify-center flex gap-x-2 relative px-2 py-1.5 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
-                                        ${page?.name}
-                                    </a>
-                                </li>
-                            `)
-                        }
-                    ))}
-                </ul>
-            `)
-        ).replaceAll(/(\s\s|\s\n|\s\t|\t\s)/g, "").replaceAll(" , ", "")
+            minify(
+                String(`
+                    <ul role="list" class="items-center justify-end gap-1 hidden sm:flex">
+                        ${String(pages.map(
+                            page => {
+                                const path = window.location.pathname
+                                const activeByMenu = (
+                                    path.replaceAll('/','').toLocaleLowerCase() == (page.route).toLocaleLowerCase() ||
+                                    path.replaceAll('/','').toLocaleLowerCase() == "" && (page.route).toLocaleLowerCase() == "home"
+                                ) ? "active" : null
+                                return(`
+                                    <li>
+                                        <a href="/${page?.route == "home" ? '': page?.route}" data-route-name="${page?.route}" class="${ activeByMenu } justify-center flex gap-x-2 relative px-2 py-1.5 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
+                                            ${page?.name}
+                                        </a>
+                                    </li>
+                                `)
+                            }
+                        ))}
+                    </ul>
+                `)
+            )
+        )
     }
 
     /**
@@ -108,13 +110,11 @@ export class Header {
                     path.replaceAll('/','').toLocaleLowerCase() == (page.route).toLocaleLowerCase() ||
                     path.replaceAll('/','').toLocaleLowerCase() == "" && (page.route).toLocaleLowerCase() == "home"
                 ) ? "text-primary" : ""
-                return(
-                    String(minify(`
-                        <li>
-                            <a class="hover:text-primary-500 ${activeByMenu} dark:hover:text-primary-400" href="/${page.route == "home" ? '' : page?.route}">${page?.name}</a>
-                        </li>
-                    `))
-                )
+                return(`
+                    <li>
+                        <a class="hover:text-primary-500 ${activeByMenu} dark:hover:text-primary-400" href="/${page.route == "home" ? '' : page?.route}">${page?.name}</a>
+                    </li>
+                `)
             }
         ))
     }
@@ -124,7 +124,7 @@ export class Header {
      */
     sidebar = () => {
         const sidebar       = document.querySelector('#menu')
-        sidebar.innerHTML   = minify(String(this.menuList())).replaceAll(/\>\s\,\</g, "><").replaceAll(/\>\,\</g, "><").replaceAll(" , ", "")
+        sidebar.innerHTML   = minify(String(this.menuList()))
     }
 
     /**
@@ -132,12 +132,12 @@ export class Header {
      */
     #navigation = () => {
         const header = document.querySelector('#header')
-        header.innerHTML = (`
+        header.innerHTML = minify(`
             <nav class="flex items-center justify-between w-full max-w-6xl mx-auto">
-                ${this.#logo().replaceAll('\n', ' ')}
-                ${this.#menu().replaceAll('\n', ' ')}
+                ${this.#logo()}
+                ${this.#menu()}
                 ${this.#rightNavigation()}
             </nav>
-        `.replaceAll(/(\s\s|\s\n|\s\t|\t\s)/g, ""))
+        `)
     }
 }
