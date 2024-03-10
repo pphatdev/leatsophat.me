@@ -41,7 +41,17 @@ import homeCover from '../assets/home.webp'
 import projectsCover from '../assets/projects.webp'
 import aboutCover from '../assets/about.webp'
 
+// Firework init
+import rgbBg from '../assets/rgb.gif'
+import soundExplosion0 from '../assets/audios/explosion0.mp3'
+import soundExplosion1 from '../assets/audios/explosion1.mp3'
+import soundExplosion2 from '../assets/audios/explosion2.mp3'
+
 export {
+    soundExplosion0,
+    soundExplosion1,
+    soundExplosion2,
+    rgbBg,
     homeCover,
     projectsCover,
     aboutCover,
