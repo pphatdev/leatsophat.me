@@ -40,6 +40,7 @@ import ellipsisVertical from '../assets/icons/ellipsis-vertical-outline.svg'
 import homeCover from '../assets/home.webp'
 import projectsCover from '../assets/projects.webp'
 import aboutCover from '../assets/about.webp'
+import fireworksCover from '../assets/fireworks.webp'
 
 // Firework init
 import rgbBg from '../assets/rgb.gif'
@@ -49,6 +50,7 @@ import soundExplosion2 from '../assets/audios/explosion2.mp3'
 import camboBg from "../assets/cambodia-bg.svg"
 
 export {
+    fireworksCover,
     camboBg,
     soundExplosion0,
     soundExplosion1,
