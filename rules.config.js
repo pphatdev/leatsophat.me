@@ -7,7 +7,7 @@ export const rules = [
         },
     },
     {
-        test: /\.(png|jpe?g|gif|ico|webp|svg)$/i,
+        test: /\.(png|jpe?g|gif|ico|webp|svg|mp3$)$/i,
         use: [
             {
                 loader: 'file-loader',
