@@ -15,7 +15,7 @@ export class Header {
         return(
             minify(
                 String(`
-                    <ul role="list" class="items-center justify-end gap-1 hidden sm:flex">
+                    <ul role="menu" class="items-center justify-end gap-1 hidden sm:flex">
                         ${String(pages.map(
                             page => {
                                 const path = window.location.pathname
@@ -24,8 +24,8 @@ export class Header {
                                     path.replaceAll('/','').toLocaleLowerCase() == "" && (page.route).toLocaleLowerCase() == "home"
                                 ) ? "active" : null
                                 return(`
-                                    <li>
-                                        <a href="/${page?.route == "home" ? '': page?.route}" data-route-name="${page?.route}" class="${ activeByMenu } justify-center flex gap-x-2 relative px-2 py-1.5 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
+                                    <li role="presentation">
+                                        <a role="menuitem" href="/${page?.route == "home" ? '': page?.route}" data-route-name="${page?.route}" class="${ activeByMenu } justify-center flex gap-x-2 relative px-2 py-1.5 text-sm font-semibold leading-6 text-gray-900 transition-all rounded-md group whitespace-nowrap hover:ring-black/10 hover:ring-1 hover:dark:ring-white/20 hover:backdrop-blur-sm dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/20">
                                             ${page?.name}
                                         </a>
                                     </li>
