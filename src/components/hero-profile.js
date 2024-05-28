@@ -5,5 +5,13 @@ import { fav512 } from "../helpers/assets"
  * @returns
  */
 export const showProfile = () => {
-    return `<img src="${fav512.replace("dist",'.')}" loading="lazy" class="w-36 rounded-full sm:rounded-2xl h-36 sm:w-44 md:w-64 sm:h-44 md:h-64 my-7" alt="Leat Sophat">`
+    return `
+    <div class="w-36 rounded-full h-36 sm:w-44 md:w-64 sm:h-44 md:h-64 inset-y-7 ring- outline-offset-2 ring-primary absolute animate-spin-slow duration-1000 border-primary border-2 border-solid border-t-transparent"></div>
+    <img
+        src="${ fav512.replace("dist",'.') }"
+        loading="lazy"
+        class="w-36 rounded-full ring-4 ring-inset ring-primary h-36 sm:w-44 md:w-64 sm:h-44 md:h-64 my-7"
+        alt="Leat Sophat"
+    >
+    `
 }

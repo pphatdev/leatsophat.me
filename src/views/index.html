@@ -69,14 +69,13 @@
         </div>
     </div>
 
-
-    <div class="relative dark:bg-slate-950 snap-center h-[calc(100vh_+2rem)] min-h-[50rem] sm:h-[calc(100vh_+8px)]">
-        <div class="relative flex flex-col items-center justify-center h-[calc(100vh_+2rem)] sm:h-[calc(100vh_+8px)] -mt-20 dark:bg-slate-950 transition-bg">
+    <div class="relative dark:bg-slate-950 snap-center h-[calc(100vh_+2rem)] min-h-[50rem] max-h-[60rem] sm:h-[calc(100vh_+8px)]">
+        <div class="relative flex flex-col items-center justify-center h-[calc(100vh_+2rem)] max-h-[60rem] sm:h-[calc(100vh_+8px)] -mt-20 dark:bg-slate-950 transition-bg">
             <canvas id="canvas" class="fixed inset-0 flex"></canvas>
             <!-- <div class="absolute inset-0 overflow-hidden dark:hidden">
                 <div class="jumbo absolute -inset-[10px] opacity-50"></div>
             </div> -->
-            <div class="flex flex-col items-center justify-center w-full max-w-6xl px-4 pt-10 mx-auto text-center sm:flex-col gap-7 md:pt-0 md:items-start md:justify-between md:flex-row">
+            <div class="flex flex-col items-center justify-center w-full max-w-6xl px-4 pt-10 mx-auto text-center max-h-96 sm:flex-col gap-7 md:pt-0 md:items-start md:justify-between md:flex-row">
                 <h1 class="md:hidden leading-[0] text-center text-[6rem] font-tacteng">3</h1>
                 <div class="block">
                     <h1 class="relative text-4xl font-bold leading-tight text-gray-800 break-words transition-colors sm:text-left md:text-6xl font-poppins sm:flex-row dark:text-white dark:opacity-80">
@@ -106,7 +105,7 @@
                         </a>
                     </div>
                 </div>
-                <div data-image class="z-10 items-center justify-center flex-shrink-0 order-first block md:order-last">
+                <div data-image class="relative z-10 items-center justify-center flex-shrink-0 order-first block border-4 border-dashed animate-faded dark:border-slate-900 md:order-last">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 animate-spin text-black/50">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
                     </svg>

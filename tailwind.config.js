@@ -27,6 +27,16 @@ module.exports = {
             fontFamily: {
                 body: ["'Poppins'","'Open San'","'Sofia Sans Condensed'", "sans-serif", '"Suwannaphum"', "serif"],
                 poppins: [ '"Poppins"', 'sans-serif', '"Suwannaphum"', "serif"]
+            },
+            animation: {
+                'spin-slow': 'spin 10s linear infinite',
+                'faded': 'faded 2s linear',
+            },
+            keyframes: {
+                faded: {
+                    '0%': { opacity: 0 },
+                    '100%': { opacity: 1 },
+                }
             }
         },
     },
