@@ -69,7 +69,7 @@ export default {
         pages.map((page) =>
             new HtmlWebpackPlugin({
                 favicon: `${src}/assets/favicon.ico`,
-                title: `${page.route == "home" ? '' : page.name + ' - '} ${me?.fullName}`,
+                title: `${page?.title}`,
                 filename: `${dist}/${page?.route == "home" ? 'index' : `${page?.route}/index`}.html`,
                 template: `${src}/views/${page?.route == "home" ? 'index' : `${page?.route}`}.html`,
                 detail: me?.description,
@@ -83,9 +83,9 @@ export default {
                     "X-XSS-Protection": "1; report=<reporting-uri>",
                 },
                 templateParameters: {
-                    title: `${page.route == "home" ? 'Portfolio' : page.name } - ${me?.fullName}`,
-                    detail: me?.description,
-                    link: `${ me?.domain }/${ page?.route == "home" ? "":page?.route }`,
+                    title: page.title,
+                    detail: page?.description,
+                    link: `${ me?.domain }/${ page?.route == "home" ? "": page?.route }`,
                     cover: `${ dots(page?.route, "home")}/assets/${ page?.route }.webp`,
                     appleTouchIcon: `${ dots(page?.route, "home") }/assets/apple-touch-icon.png`,
                     icon16x16: `${ dots(page?.route, "home") }/assets/favicon-32x32.png`,
