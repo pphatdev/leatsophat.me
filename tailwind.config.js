@@ -8,6 +8,9 @@ module.exports = {
     darkMode: "class",
     theme: {
         extend: {
+            screens: {
+                print: {raw: 'print'},
+            },
             colors: {
                 primary: {
                     DEFAULT: "#00886e",
