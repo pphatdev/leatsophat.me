@@ -52,23 +52,23 @@
 </head>
 
 <body class="relative dark:bg-slate-950 dark:text-slate-200">
-    <div class="!fixed area">
+    <div class="!fixed area print:[&>*>li]:bottom-0">
         <ul class="circles"> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li></ul>
     </div>
-    <svg class="absolute mt-4 pointer-events-none inset-0 h-full w-full stroke-gray-300 dark:stroke-gray-800 opacity-50 [mask-image:radial-gradient(100%_100%_at_top_center,white,transparent)]" aria-hidden="true">
+    <svg class="absolute mt-4 pointer-events-none inset-0 h-full w-full stroke-gray-300 print:dark:stroke-black/10 print:stroke-gray-200 dark:stroke-gray-800 opacity-50 [mask-image:radial-gradient(100%_100%_at_top_center,white,transparent)]" aria-hidden="true">
         <defs>
             <pattern id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
                 <path d="M100 200V.5M.5 .5H200" fill="none"></path>
             </pattern>
         </defs>
-        <svg x="50%" y="-1" class="overflow-visible fill-gray-50 dark:fill-slate-800">
+        <svg x="50%" y="-1" class="overflow-visible fill-gray-50 print:dark:fill-slate-100 dark:fill-slate-800">
             <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0"></path>
         </svg>
         <rect width="100%" height="100%" stroke-width="0" fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"></rect>
     </svg>
-    <header id="header" class="sticky top-0 z-20 w-full scroll-smooth backdrop-blur-sm dark:bg-white/5 bg-white/50"></header>
+    <header id="header" class="sticky top-0 z-20 w-full print:hidden scroll-smooth backdrop-blur-sm dark:bg-white/5 bg-white/50"></header>
 
-    <div data-sidebar-backdrop class="fixed inset-0 z-50 hidden w-full h-full bg-white/70 dark:block/20 backdrop-blur-sm"></div>
+    <div data-sidebar-backdrop class="fixed inset-0 z-50 hidden w-full h-full print:hidden bg-white/70 dark:block/20 backdrop-blur-sm"></div>
         <div data-sidebar-target class="fixed z-50 hidden w-full max-w-xs p-6 text-base font-semibold -translate-x-1/2 bg-white rounded-lg shadow-lg top-4 left-1/2 text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:highlight-white/5">
             <button type="button" data-sidebar-toggle class="absolute flex items-center justify-center w-8 h-8 top-5 right-5 text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300" tabindex="0">
                 <span class="sr-only">Close navigation</span>
@@ -83,13 +83,13 @@
         </div>
     </div>
 
-    <div class="relative flex flex-col items-center justify-center -mt-20 h-28 min-h-[10rem]">
+    <div class="relative flex flex-col items-center justify-center print:hidden -mt-20 h-28 min-h-[10rem]">
         <div class="fixed inset-0 overflow-hidden -z-10">
             <div class="jumbo fixed -inset-[10px] opacity-50"></div>
         </div>
     </div>
 
-    <section>
+    <section class="print:hidden">
         <div class="bg-transparent md:pt-10">
             <h1 class="text-2xl font-bold text-center uppercase dark:text-white md:text-5xl">Hire <span class="text-primary">Me</span> ? </h1>
             <h2 class="mt-5 font-medium text-center text-2x dark:text-white/90">Checkout my curriculum vitae</h2>
@@ -100,10 +100,10 @@
     <div class="w-full">
         <div class="max-w-5xl p-4 mx-auto">
             <ul role="list" id="summary" class="grid items-start justify-between gap-5 sm:flex">
-                <li class="flex-shrink-0 p-4 border rounded-xl backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 ">
+                <li class="flex-shrink-0 p-4 border rounded-xl backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 ">
                     <div class="flex flex-col items-center justify-center gap-1">
                         <img src="./../assets/android-chrome-512x512.png" alt="@pphatdev" class="rounded-full w-28 h-28 ring-4 ring-inset ring-primary">
-                        <h1 class="mt-2 text-xl font-bold text-center uppercase dark:text-white font-poppins">LEAT <span class="text-primary">Sophat</span></h1>
+                        <h1 class="mt-2 text-xl font-bold text-center uppercase print:text-black print:dark:text-black dark:text-white font-poppins">LEAT <span class="text-primary">Sophat</span></h1>
                         <p class="text-xs font-medium text-center text-slate-500 font-poppins">info.sophat@gmail.com</p>
                         <ul>
                             <li class="flex items-center justify-center gap-2 mt-3">
@@ -133,7 +133,7 @@
                 </li>
                 <li class="w-full">
                     <ul class="flex flex-col gap-4">
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
                             <ul class="flex flex-col gap-3">
                                 <li class="flex items-center justify-start gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="flex-shrink-0 w-5 h-4 text-primary">
@@ -149,7 +149,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
                             <ul class="flex flex-col gap-1 text-left">
                                 <h1 class="mb-2 font-bold">Personal Infomation</h1>
                                 <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
@@ -174,7 +174,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
                             <ul class="flex flex-col gap-1">
                                 <h1 class="mb-2 font-bold">Education</h1>
                                 <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
@@ -195,7 +195,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
                             <ul class="flex flex-col gap-1">
                                 <h1 class="mb-2 font-bold">Work Experience</h1>
                                 <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
@@ -216,7 +216,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
                             <ul class="flex flex-col gap-1">
                                 <h1 class="mb-2 font-bold">Skill</h1>
                                 <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
@@ -229,7 +229,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
                             <ul class="flex flex-col gap-1">
                                 <h1 class="mb-2 font-bold">Coding Skill</h1>
                                 <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
@@ -242,7 +242,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
                             <ul class="flex flex-col gap-1">
                                 <h1 class="mb-2 font-bold">Designing Skill</h1>
                                 <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
@@ -251,7 +251,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
                             <ul class="flex flex-col gap-1">
                                 <h1 class="mb-2 font-bold">Other Skill</h1>
                                 <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
@@ -259,7 +259,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
                             <ul class="flex flex-col gap-1">
                                 <h1 class="mb-2 font-bold">Languages</h1>
                                 <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
@@ -272,7 +272,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
                             <ul class="flex flex-col gap-1">
                                 <h1 class="mb-2 font-bold">Hobbies</h1>
                                 <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
