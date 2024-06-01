@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="Q0p9T58Q3qt7sLl5v3H_qJqokTE4bdFH6t9o-kqagHk" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-74G58FWRVF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-74G58FWRVF');
+    </script>
+
+    <!-- title -->
+    <title><%= title %></title>
+    <meta property="og:title" content="<%= title %>" >
+    <meta name="twitter:title" content="<%= title %>"/>
+    <meta property="og:site_name" content="<%= title %>"/>
+    <meta name="author" content="Leat Sophat">
+
+    <!-- description -->
+    <meta name="robots" content="follow, index"/>
+    <meta name="description" content="<%= detail %>"/>
+    <meta property="og:description" content="<%= detail %>"/>
+    <meta name="twitter:description" content="<%= detail %>"/>
+
+    <!-- share link -->
+    <link rel="canonical" href="<%= link %>"/>
+    <meta property="og:url" content="<%= link %>"/>
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="https://twitter.com/infoSophat" />
+
+    <link rel="alternate" type="application/rss+xml" title="<%= title %> Feed" href="/feed.xml" />
+
+    <!-- cover -->
+    <meta property="og:image" content="<%= cover %>"/>
+    <meta name="twitter:image" content="<%= cover %>"/>
+
+    <link rel="apple-touch-icon" sizes="76x76" href="<%= appleTouchIcon %>" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= icon16x16 %>" />
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= icon32x32 %>" />
+
+    <link rel="stylesheet" href="<%= style %>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Suwannaphum:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://pphatdev.github.io/fonts/style.css" rel="stylesheet">
+</head>
+
+<body class="relative dark:bg-slate-950 dark:text-slate-200">
+    <div class="!fixed area">
+        <ul class="circles"> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li></ul>
+    </div>
+    <svg class="absolute mt-4 pointer-events-none inset-0 h-full w-full stroke-gray-300 dark:stroke-gray-800 opacity-50 [mask-image:radial-gradient(100%_100%_at_top_center,white,transparent)]" aria-hidden="true">
+        <defs>
+            <pattern id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+                <path d="M100 200V.5M.5 .5H200" fill="none"></path>
+            </pattern>
+        </defs>
+        <svg x="50%" y="-1" class="overflow-visible fill-gray-50 dark:fill-slate-800">
+            <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0"></path>
+        </svg>
+        <rect width="100%" height="100%" stroke-width="0" fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"></rect>
+    </svg>
+    <header id="header" class="sticky top-0 z-20 w-full scroll-smooth backdrop-blur-sm dark:bg-white/5 bg-white/50"></header>
+
+    <div data-sidebar-backdrop class="fixed inset-0 z-50 hidden w-full h-full bg-white/70 dark:block/20 backdrop-blur-sm"></div>
+        <div data-sidebar-target class="fixed z-50 hidden w-full max-w-xs p-6 text-base font-semibold -translate-x-1/2 bg-white rounded-lg shadow-lg top-4 left-1/2 text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:highlight-white/5">
+            <button type="button" data-sidebar-toggle class="absolute flex items-center justify-center w-8 h-8 top-5 right-5 text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300" tabindex="0">
+                <span class="sr-only">Close navigation</span>
+                <svg viewBox="0 0 10 10" class="w-2.5 h-2.5 overflow-visible" aria-hidden="true">
+                    <path d="M0 0L10 10M10 0L0 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+            </button>
+            <ul class="space-y-6" id="menu"></ul>
+            <div class="mt-5 text-center">
+                <button data-theme-toggle class="px-3 py-1 mx-auto mt-10 text-sm transition-colors border rounded-full sm:mt-0 border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">🌞</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative flex flex-col items-center justify-center -mt-20 h-28 min-h-[10rem]">
+        <div class="fixed inset-0 overflow-hidden -z-10">
+            <div class="jumbo fixed -inset-[10px] opacity-50"></div>
+        </div>
+    </div>
+
+    <section>
+        <div class="bg-transparent md:pt-10">
+            <h1 class="text-2xl font-bold text-center uppercase dark:text-white md:text-5xl">Hire <span class="text-primary">Me</span> ? </h1>
+            <h2 class="mt-5 font-medium text-center text-2x dark:text-white/90">Checkout my curriculum vitae</h2>
+            <h1 class="text-5xl leading-none text-center md:text-7xl dark:text-white/70 font-tacteng">3</h1>
+        </div>
+    </section>
+
+    <div class="w-full">
+        <div class="max-w-5xl p-4 mx-auto">
+            <ul role="list" id="summary" class="grid items-start justify-between gap-5 sm:flex">
+                <li class="flex-shrink-0 p-4 border rounded-xl backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 ">
+                    <div class="flex flex-col items-center justify-center gap-1">
+                        <img src="./../assets/android-chrome-512x512.png" alt="@pphatdev" class="rounded-full w-28 h-28 ring-4 ring-inset ring-primary">
+                        <h1 class="mt-2 text-xl font-bold text-center uppercase dark:text-white font-poppins">LEAT <span class="text-primary">Sophat</span></h1>
+                        <p class="text-xs font-medium text-center text-slate-500 font-poppins">info.sophat@gmail.com</p>
+                        <ul>
+                            <li class="flex items-center justify-center gap-2 mt-3">
+                                <a href="https://github.com/pphatdev" target="_blank" class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 hover:text-primary text-slate-500" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://g.dev/sophat" target="_blank" class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" fill="currentColor" class="w-5 h-5 hover:text-primary text-slate-500">
+                                        <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://t.me/SophatLEAT" target="_blank" class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 hover:text-primary text-slate-500" viewBox="0 0 496 512">
+                                        <path d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.figma.com/@PPhat" target="_blank" class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" class="w-4 h-4 hover:text-primary text-slate-500">
+                                        <path d="M14 95.8C14 42.9 56.9 0 109.8 0H274.2C327.1 0 370 42.9 370 95.8C370 129.3 352.8 158.8 326.7 175.9C352.8 193 370 222.5 370 256C370 308.9 327.1 351.8 274.2 351.8H272.1C247.3 351.8 224.7 342.4 207.7 326.9V415.2C207.7 468.8 163.7 512 110.3 512C57.5 512 14 469.2 14 416.2C14 382.7 31.2 353.2 57.2 336.1C31.2 319 14 289.5 14 256C14 222.5 31.2 193 57.2 175.9C31.2 158.8 14 129.3 14 95.8zM176.3 191.6H109.8C74.2 191.6 45.4 220.4 45.4 256C45.4 291.4 74 320.2 109.4 320.4C109.5 320.4 109.7 320.4 109.8 320.4H176.3V191.6zM207.7 256C207.7 291.6 236.5 320.4 272.1 320.4H274.2C309.7 320.4 338.6 291.6 338.6 256C338.6 220.4 309.7 191.6 274.2 191.6H272.1C236.5 191.6 207.7 220.4 207.7 256zM109.8 351.8C109.7 351.8 109.5 351.8 109.4 351.8C74 352 45.4 380.8 45.4 416.2C45.4 451.7 74.6 480.6 110.3 480.6C146.6 480.6 176.3 451.2 176.3 415.2V351.8H109.8zM109.8 31.4C74.2 31.4 45.4 60.2 45.4 95.8C45.4 131.4 74.2 160.2 109.8 160.2H176.3V31.4H109.8zM207.7 160.2H274.2C309.7 160.2 338.6 131.4 338.6 95.8C338.6 60.2 309.7 31.4 274.2 31.4H207.7V160.2z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="w-full">
+                    <ul class="flex flex-col gap-4">
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                            <ul class="flex flex-col gap-3">
+                                <li class="flex items-center justify-start gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="flex-shrink-0 w-5 h-4 text-primary">
+                                        <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
+                                    </svg>
+                                    <p class="text-sm leading-6 dark:text-slate-400">855 96 918 3363</p>
+                                </li>
+                                <li class="flex flex-col items-start justify-start gap-2 sm:flex-row">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" class="flex-shrink-0 w-5 h-5 text-primary">
+                                        <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                                    </svg>
+                                    <p class="text-sm leading-6 dark:text-slate-400">Tropang Tul Village, Sangkat Kambol, Khan Kambal, Phnom Penh City, Cambodia.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                            <ul class="flex flex-col gap-1 text-left">
+                                <h1 class="mb-2 font-bold">Personal Infomation</h1>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Gender</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Male</p>
+                                </li>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Date of Birth</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">10, Oct, 2001</p>
+                                </li>
+                                <li class="flex flex-col items-start justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 mt-0.5 font-medium w-full sm:w-28">Place of Birth</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Cheach Chour Village, Cheach Commune, Kamchaymear District, Prey Veng Province.</p>
+                                </li>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Marital Status</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Single</p>
+                                </li>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Nationality</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Khmer</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                            <ul class="flex flex-col gap-1">
+                                <h1 class="mb-2 font-bold">Education</h1>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2006-2012</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Primary School</p>
+                                </li>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2013-2018</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">High School</p>
+                                </li>
+                                <li class="flex flex-col items-start justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 mt-0.5 font-medium w-28">2019-2023</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Self-Researching</p>
+                                </li>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2023-Present</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">CUS University</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                            <ul class="flex flex-col gap-1">
+                                <h1 class="mb-2 font-bold">Work Experience</h1>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2018-2019</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Security Guard</p>
+                                </li>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2019-2020</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Content writing officer at TURBOTECH</p>
+                                </li>
+                                <li class="flex flex-col items-start justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 mt-0.5 font-medium w-28">2020-2021</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Front-End Developer at TURBOTECH and an Open-Source Developer on Internet.</p>
+                                </li>
+                                <li class="flex flex-col items-start justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2020-Current</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Senior Front-End Developer at TURBOTECH and an Open-Source Developer on Internet</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                            <ul class="flex flex-col gap-1">
+                                <h1 class="mb-2 font-bold">Skill</h1>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Team Lead</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Team Management</p>
+                                </li>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Agile scrum</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Using Agile scrum Management</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                            <ul class="flex flex-col gap-1">
+                                <h1 class="mb-2 font-bold">Coding Skill</h1>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Front-End</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">HTML, CSS, SASS, LESS, JavaScript, TypeScript, NodeJS, ReactJS, NextJs...</p>
+                                </li>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Back-End</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">PHP, Laravel, NodeJS, MySQL, PostgreSQL...</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                            <ul class="flex flex-col gap-1">
+                                <h1 class="mb-2 font-bold">Designing Skill</h1>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">UI/UX</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Figma, Adobe XD</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                            <ul class="flex flex-col gap-1">
+                                <h1 class="mb-2 font-bold">Other Skill</h1>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">MS Word, MS Excel, MS Access, Visual Studio Code, Figma, Adobe XD, Adobe Photoshop, Adobe Illustrations, Gitlab, GitHub, Ubuntu, Hosting...</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                            <ul class="flex flex-col gap-1">
+                                <h1 class="mb-2 font-bold">Languages</h1>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Khmer</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Good</p>
+                                </li>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">English</p>
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Medium</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 dark:border-white/10 rounded-xl">
+                            <ul class="flex flex-col gap-1">
+                                <h1 class="mb-2 font-bold">Hobbies</h1>
+                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
+                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Researching Technology, Coding, Playing eSport, Entertainment...</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

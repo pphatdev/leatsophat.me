@@ -2,6 +2,8 @@
 @tailwind utilities;
 @tailwind components;
 
+@import url('card.css');
+
 @layer base {
     * {
         @apply font-body;

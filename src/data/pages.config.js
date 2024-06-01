@@ -3,6 +3,7 @@ export const pages = [
     { name: "Home", route: "home" },
     { name: "Projects", route: "projects" },
     { name: "About Me", route: "about" },
+    { name: "Hire Me", route: "hire-me" },
     { name: "Not Found", route: "404" },
     { name: "FireWorks", route: "fireworks" },
 ]
@@ -13,4 +14,5 @@ export const modules = [
     { name: "Home", route: "home" },
     { name: "Projects", route: "projects" },
     { name: "About Me", route: "about" },
+    { name: "Hire Me", route: "hire-me" },
 ]
