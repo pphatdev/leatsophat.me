@@ -52,7 +52,20 @@
 </head>
 
 <body class=" dark:bg-slate-950">
-
+    <div class="!fixed area">
+        <ul class="circles"> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li></ul>
+    </div>
+    <svg class="absolute mt-4 pointer-events-none inset-0 h-full w-full stroke-gray-300 dark:stroke-gray-800 opacity-50 [mask-image:radial-gradient(100%_100%_at_top_center,white,transparent)]" aria-hidden="true">
+        <defs>
+            <pattern id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+                <path d="M100 200V.5M.5 .5H200" fill="none"></path>
+            </pattern>
+        </defs>
+        <svg x="50%" y="-1" class="overflow-visible fill-gray-50 dark:fill-slate-800">
+            <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0"></path>
+        </svg>
+        <rect width="100%" height="100%" stroke-width="0" fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"></rect>
+    </svg>
     <header id="header" class="sticky top-0 z-20 w-full scroll-smooth backdrop-blur-sm dark:bg-white/5 bg-white/50"></header>
     <div data-sidebar-backdrop class="fixed inset-0 z-50 hidden w-full h-full bg-white/70 dark:block/20 backdrop-blur-sm"></div>
         <div data-sidebar-target class="fixed z-50 hidden w-full max-w-xs p-6 text-base font-semibold -translate-x-1/2 bg-white rounded-lg shadow-lg top-4 left-1/2 text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:highlight-white/5">
