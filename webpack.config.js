@@ -25,7 +25,7 @@ export default {
         }, {}
     ),
     output: {
-        filename: 'js/[name]-static-[contenthash:10].js?id=[contenthash]',
+        filename: 'js/[name].js?id=[contenthash]',
         asyncChunks: false,
         clean: true
     },

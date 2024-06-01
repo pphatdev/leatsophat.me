@@ -36,6 +36,12 @@ export const pages = [
         route: "fireworks",
         description: "Sample fireworks"
     },
+    {
+        title: "Notifications",
+        name: "Notifications",
+        route: "notifications",
+        description: "Notificationss"
+    },
 ]
 
 
