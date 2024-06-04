@@ -37,27 +37,33 @@ export const pages = [
         description: "Sample fireworks"
     },
     {
-        title: "Notifications",
-        name: "Notifications",
-        route: "notifications",
-        description: "Notificationss"
+        title: "Leat Sophat | FireWorks",
+        name: "FireWorks",
+        route: "contact",
+        description: "Sample fireworks"
     },
 ]
 
 
 // Main Menu
 export const modules = [
-    {
-        title: "Leat Sophat - Portfolio",
-        name: "Home",
-        route: "home",
-        description: "Welcome to my portfolio - Thoughts from a wandering mind. I am the senior front-end developer of TurboTech, and an UI/UX designer. In my free time, I like design side projects and developing them."
-    },
+    // {
+    //     title: "Leat Sophat - Portfolio",
+    //     name: "Home",
+    //     route: "home",
+    //     description: "Welcome to my portfolio - Thoughts from a wandering mind. I am the senior front-end developer of TurboTech, and an UI/UX designer. In my free time, I like design side projects and developing them."
+    // },
     {
         title: "Leat Sophat | Projects",
         name: "Projects",
         route: "projects",
         description: "Showing projects that I have built."
+    },
+    {
+        title: "Leat Sophat | Contact Me",
+        name: "Contact Me",
+        route: "contact",
+        description: "Sample fireworks"
     },
     {
         title: "Leat Sophat | About",
