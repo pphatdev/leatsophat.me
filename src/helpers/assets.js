@@ -49,7 +49,10 @@ import soundExplosion1 from '../assets/audios/explosion1.mp3'
 import soundExplosion2 from '../assets/audios/explosion2.mp3'
 import camboBg from "../assets/cambodia-bg.svg"
 
+import mailIcon from '../assets/icons/exchange-mails.png'
+
 export {
+    mailIcon,
     fireworksCover,
     camboBg,
     soundExplosion0,
