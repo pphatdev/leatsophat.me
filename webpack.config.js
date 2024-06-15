@@ -75,7 +75,7 @@ export default {
                 detail: me?.description,
                 chunks: [page?.route],
                 minify: true,
-                inject: "body",
+                inject: "head",
                 meta:{
                     "Content-Security-Policy": "default-src 'self'; img-src https://*; child-src 'none';",
                     "X-Content-Type-Options": "nosniff",
