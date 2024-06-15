@@ -13,9 +13,6 @@
         gtag('config', 'G-74G58FWRVF');
     </script>
 
-
-
-
     <!-- title -->
     <title><%= title %></title>
     <meta property="og:title" content="<%= title %>" >
@@ -93,7 +90,7 @@
     </div>
 
     <section class="print:hidden">
-        <div class="bg-transparent md:pt-10">
+        <div class="flex flex-col gap-3 bg-transparent md:pt-10">
             <h1 class="text-2xl font-bold text-center uppercase dark:text-white md:text-5xl">Hire <span class="text-primary">Me</span> ? </h1>
             <h2 class="mt-5 font-medium text-center text-2x dark:text-white/90">Checkout my curriculum vitae</h2>
             <h1 class="text-5xl leading-none text-center md:text-7xl dark:text-white/70 font-tacteng">3</h1>
@@ -103,12 +100,14 @@
     <div class="w-full">
         <div class="max-w-5xl p-4 mx-auto">
             <ul role="list" id="summary" class="grid items-start justify-between gap-5 sm:flex">
-                <li class="flex-shrink-0 p-4 border rounded-xl backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 ">
+                <li class="flex-shrink-0 sm:max-w-[13rem]  border rounded-xl backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 ">
                     <div class="flex flex-col items-center justify-center gap-1">
-                        <img src="./../assets/android-chrome-512x512.png" alt="@pphatdev" class="rounded-full w-28 h-28 ring-4 ring-inset ring-primary">
-                        <h1 class="mt-2 text-xl font-bold text-center uppercase print:text-black print:dark:text-black dark:text-white font-poppins">LEAT <span class="text-primary">Sophat</span></h1>
-                        <p class="text-xs font-medium text-center text-slate-500 font-poppins">info.sophat@gmail.com</p>
-                        <ul>
+                        <div class="flex flex-col items-center justify-center gap-1 p-4 pb-0">
+                            <img src="./../assets/android-chrome-512x512.png" alt="@pphatdev" class="rounded-full w-28 h-28 ring-4 ring-inset ring-primary">
+                            <h1 class="mt-2 text-xl font-bold text-center uppercase print:text-black print:dark:text-black dark:text-white font-poppins">LEAT <span class="text-primary">Sophat</span></h1>
+                            <p class="text-xs font-medium text-center print:hidden text-slate-500 font-poppins">info.sophat@gmail.com</p>
+                        </div>
+                        <ul class="p-4 pt-0 print:hidden">
                             <li class="flex items-center justify-center gap-2 mt-3">
                                 <a href="https://github.com/pphatdev" target="_blank" class="flex items-center gap-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 hover:text-primary text-slate-500" viewBox="0 0 24 24">
@@ -132,17 +131,38 @@
                                 </a>
                             </li>
                         </ul>
+                        <ul class="flex-col hidden gap-1 p-4 pt-0 print:flex">
+                            <li class="flex items-center justify-start gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="flex-shrink-0 w-4 h-4 text-primary">
+                                    <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                                    <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                                </svg>
+                                <p class="text-xs leading-6 dark:text-slate-400">info.sophat@gmail.com</p>
+                            </li>
+                            <li class="flex items-center justify-start gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="flex-shrink-0 w-4 h-3 text-primary">
+                                    <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
+                                </svg>
+                                <p class="text-xs leading-6 dark:text-slate-400">855 96 918 3363 <span class="text-xs font-medium text-black/50 dark:text-white/50">(SMS)</span></p>
+                            </li>
+                            <li class="flex flex-col items-start justify-start gap-2 sm:flex-row">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" class="flex-shrink-0 w-4 h-4 text-primary">
+                                    <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                                </svg>
+                                <p class="text-xs leading-6 whitespace-pre-wrap dark:text-slate-400">Phnom Penh, Cambodia.</p>
+                            </li>
+                        </ul>
                     </div>
                 </li>
                 <li class="w-full">
-                    <ul class="flex flex-col gap-4">
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
+                    <ul class="flex flex-col gap-4" data-tartget="exp">
+                        <li class="print:hidden w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
                             <ul class="flex flex-col gap-3">
                                 <li class="flex items-center justify-start gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="flex-shrink-0 w-5 h-4 text-primary">
                                         <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
                                     </svg>
-                                    <p class="text-sm leading-6 dark:text-slate-400">855 96 918 3363</p>
+                                    <p class="text-sm leading-6 dark:text-slate-400">855 96 918 3363 <span class="font-medium text-black/50 dark:text-white/50">(SMS)</span></p>
                                 </li>
                                 <li class="flex flex-col items-start justify-start gap-2 sm:flex-row">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" class="flex-shrink-0 w-5 h-5 text-primary">
@@ -152,142 +172,17 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
-                            <ul class="flex flex-col gap-1 text-left">
-                                <h1 class="mb-2 font-bold">Personal Infomation</h1>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Gender</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Male</p>
-                                </li>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Date of Birth</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">10, Oct, 2001</p>
-                                </li>
-                                <li class="flex flex-col items-start justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 mt-0.5 font-medium w-full sm:w-28">Place of Birth</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Cheach Chour Village, Cheach Commune, Kamchaymear District, Prey Veng Province.</p>
-                                </li>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Marital Status</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Single</p>
-                                </li>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Nationality</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Khmer</p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
-                            <ul class="flex flex-col gap-1">
-                                <h1 class="mb-2 font-bold">Education</h1>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2006-2012</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Primary School</p>
-                                </li>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2013-2018</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">High School</p>
-                                </li>
-                                <li class="flex flex-col items-start justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 mt-0.5 font-medium w-28">2019-2023</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Self-Researching</p>
-                                </li>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2023-Present</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">CUS University</p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
-                            <ul class="flex flex-col gap-1">
-                                <h1 class="mb-2 font-bold">Work Experience</h1>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2018-2019</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Security Guard</p>
-                                </li>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2019-2020</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Content writing officer at TURBOTECH</p>
-                                </li>
-                                <li class="flex flex-col items-start justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 mt-0.5 font-medium w-28">2020-2021</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Front-End Developer at TURBOTECH and an Open-Source Developer on Internet.</p>
-                                </li>
-                                <li class="flex flex-col items-start justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">2020-Current</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Senior Front-End Developer at TURBOTECH and an Open-Source Developer on Internet</p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
-                            <ul class="flex flex-col gap-1">
-                                <h1 class="mb-2 font-bold">Skill</h1>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Team Lead</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Team Management</p>
-                                </li>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Agile scrum</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Using Agile scrum Management</p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
-                            <ul class="flex flex-col gap-1">
-                                <h1 class="mb-2 font-bold">Coding Skill</h1>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Front-End</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">HTML, CSS, SASS, LESS, JavaScript, TypeScript, NodeJS, ReactJS, NextJs...</p>
-                                </li>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Back-End</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">PHP, Laravel, NodeJS, MySQL, PostgreSQL...</p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
-                            <ul class="flex flex-col gap-1">
-                                <h1 class="mb-2 font-bold">Designing Skill</h1>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">UI/UX</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Figma, Adobe XD</p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
-                            <ul class="flex flex-col gap-1">
-                                <h1 class="mb-2 font-bold">Other Skill</h1>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">MS Word, MS Excel, MS Access, Visual Studio Code, Figma, Adobe XD, Adobe Photoshop, Adobe Illustrations, Gitlab, GitHub, Ubuntu, Hosting...</p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
-                            <ul class="flex flex-col gap-1">
-                                <h1 class="mb-2 font-bold">Languages</h1>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">Khmer</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Good</p>
-                                </li>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="flex-shrink-0 w-full font-medium sm:w-28">English</p>
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Medium</p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="w-full p-4 border backdrop-blur-[1px] bg-white/40 dark:bg-white/5 print:dark:border-black/10 dark:border-white/10 rounded-xl">
-                            <ul class="flex flex-col gap-1">
-                                <h1 class="mb-2 font-bold">Hobbies</h1>
-                                <li class="flex flex-col items-center justify-start gap-2 sm:flex-row">
-                                    <p class="w-full text-sm leading-6 text-slate-600 dark:text-slate-400">Researching Technology, Coding, Playing eSport, Entertainment...</p>
-                                </li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
+
+    <button type="button" onclick="window.print()" class="fixed flex items-center justify-center w-10 h-10 gap-2 text-xs transition-colors border rounded-full print:hidden right-5 bottom-5 active:bg-primary/10 sm:text-sm border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+        </svg>
+    </button>
 
 </body>
 </html>
