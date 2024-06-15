@@ -1,5 +1,6 @@
-/node_modules/
+# NodePackages
+node_modules/
+website/node_modules/
+website/dist/
+public/
 .env
-/dist/*
-!dist/robots.txt
-!dist/sitemap.xml

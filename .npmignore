@@ -1,0 +1,4 @@
+# NodePackages
+node_modules/
+website/
+.env
