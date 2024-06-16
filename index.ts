@@ -3,6 +3,16 @@ import { ENV } from './configs/index.js';
 import { ROUTE } from "./src/routes/apis/index.js";
 import { ROUTE as ASSETS } from "./configs/asset.js"
 import { ROUTE as VIEW } from "./src/routes/web/index.js"
+import { ROUTE as API } from "./src/routes/apis/index.js"
+import { info } from './configs/info.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename    = fileURLToPath(import.meta.url);
+const __dirname     = path.dirname(__filename);
+
+// Configure Express to use EJS
+ROUTE.set( "views", path.join( __dirname, "./src/views" ) );
+ROUTE.set( "view engine", "ejs" );
 
 
 /**
@@ -23,23 +33,15 @@ APP.use(VIEW)
 
 
 /**
+ * View pages
+*/
+APP.use(API)
+
+
+/**
  * Initalize Route
 */
 APP.use(ROUTE)
-
-/**
- * Defualt End point
-*/
-APP.get('/api/*', (request: Request, response: Response) => {
-    response.send(
-        {
-            status: 200,
-            method: request.method,
-            message: "Hello World!",
-            query: request.query,
-        }
-    );
-});
 
 
 /**

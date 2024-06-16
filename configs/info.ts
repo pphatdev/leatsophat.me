@@ -1,3 +1,5 @@
+import { detail, name, domain } from '../me.config.js';
+
 export type Info = {
     lang?: string,
     title?: string,
@@ -23,27 +25,41 @@ export type Info = {
     themeColor?: string,
 }
 
-export const info: Info = {
-    lang: "en",
-    title: "Leat Sophat",
-    author: "Leat Sophat",
-    description: "Welcome to my portfolio - Thoughts from a wandering mind. I am the senior front-end developer of TurboTech, and an UI/UX designer. In my free time, I like design side projects and developing them.",
-    canonical: "https://leatsophat.me",
-    icons: {
-        ico: "assets/favicon.ico",
-        i76x76: "assets/apple-touch-icon.png",
-        i32x32: "assets/favicon-32x32.png",
-        i16x16: "assets/favicon-16x16.png",
+export const info = ({
+    lang = "en",
+    title = "",
+    author = name,
+    description = detail,
+    canonical = domain,
+    icons = {
+        ico :`${canonical}/assets/favicon.ico`,
+        i76x76 :`${canonical}/assets/apple-touch-icon.png`,
+        i32x32 :`${canonical}/assets/favicon-32x32.png`,
+        i16x16 :`${canonical}/assets/favicon-16x16.png`,
     },
-    banner: {
-        cover: "assets/home.webp",
-        type: "website",
-        siteURL: "https://twitter.com/infoSophat"
+    banner = {
+        cover : `${canonical}/assets/home.webp`,
+        type : "website",
+        siteURL : "https://twitter.com/infoSophat",
     },
-    manifest: "assets/site.webmanifest",
-    feed: "assets/feed.xml",
-    styles: [
-        "css/style.css",
+    manifest = `${canonical}/assets/site.webmanifest`,
+    feed = `${canonical}/assets/feed.xml`,
+    styles = [
+        `${canonical}/css/style.css`
     ],
-    themeColor: "#ffffff",
-}
+    themeColor = "#ffffff"
+}: Info = {} ) => {
+    return {
+        lang: lang,
+        title: (title ? `${title} | ` : "") + name,
+        author: author,
+        description: description,
+        canonical: canonical,
+        icons: icons,
+        banner: banner,
+        manifest: manifest,
+        feed: feed,
+        styles: styles,
+        themeColor: themeColor,
+    }
+};
