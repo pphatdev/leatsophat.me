@@ -1,30 +1,15 @@
-<div align="center">
-    <h1> Sample TS Node API 🌈🌞 </h1>
-    <p>This Project Built form Sample project that using NodeJs [es6] with Postgres SQL</p>
-</div>
+# LEAT Sophat 🌈🌞
+Welcome to my portfolio - Thoughts from a wandering mind. I am the senior front-end developer of TurboTech, and an UI/UX designer. In my free time, I like design side projects and developing them.
 
-## Project Structure 📂
-
-### Project Sources
-Control the APIs
-```sh
-├───configs
-└───src
-    ├───apis
-    ├───controllers
-    ├───helpers
-    ├───middlewares
-    └───models
-```
 
 ## Clone the project 📂
 
 ```sh
-git clone https://github.com/pphatdev/sample-ts-node-api.git
+git clone https://github.com/pphatdev/leatsophat.me.git
 ```
 
 ```sh
-cd ./sample-ts-node-api
+cd ./leatsophat.me
 ```
 
 ## To Start Project ♻️
@@ -70,10 +55,13 @@ and these what you see on terminal! 😎
 ```bash
 ♻️  Starting with: [development] Mode!
 
+🌞🫣 Web development:
+🚀 Localhost: http://localhost:3000/
+🚀 Local Service: http://127.0.0.1:3000/
+
 🌞 API development:
 🚀 Localhost: http://localhost:3000/api/v1/
 🚀 Local Service: http://127.0.0.1:3000/api/v1/
-🚀 Host Service: http://{ipv4}:3000/api/v1/
 ```
 
 
