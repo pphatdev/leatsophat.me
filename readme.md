@@ -67,4 +67,4 @@ and these what you see on terminal! 😎
 
 ## Bug Report
 
-[Help me to Improve](https://github.com/pphatdev/sample-ts-node-api/discussions/new?category=general)
+[Help me to Improve](https://github.com/pphatdev/leatsophat.me/discussions/new?category=general)
