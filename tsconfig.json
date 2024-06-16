@@ -9,12 +9,4 @@
         "moduleResolution": "NodeNext",
     },
     "include": ["./src/**/*.ts", "index.ts"],
-    "assets": [
-        {
-            "include": "./src/assets/**/*.{png,ico,jpeg,jpg}",
-            "exclude": "./public/assets/**/*.{png,ico,jpeg,jpg}",
-            "watchAssets": true
-        },
-    ]
-
 }

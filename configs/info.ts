@@ -1,7 +1,7 @@
 export type Info = {
     lang?: string,
     title?: string,
-    desciption?: string,
+    description?: string,
     author?: string,
     canonical?: string,
     icons?: {
@@ -27,7 +27,7 @@ export const info: Info = {
     lang: "en",
     title: "Leat Sophat",
     author: "Leat Sophat",
-    desciption: "Welcome to my portfolio - Thoughts from a wandering mind. I am the senior front-end developer of TurboTech, and an UI/UX designer. In my free time, I like design side projects and developing them.",
+    description: "Welcome to my portfolio - Thoughts from a wandering mind. I am the senior front-end developer of TurboTech, and an UI/UX designer. In my free time, I like design side projects and developing them.",
     canonical: "https://leatsophat.me",
     icons: {
         ico: "assets/favicon.ico",
@@ -40,8 +40,8 @@ export const info: Info = {
         type: "website",
         siteURL: "https://twitter.com/infoSophat"
     },
-    manifest: "site.webmanifest",
-    feed: "feed.xml",
+    manifest: "assets/site.webmanifest",
+    feed: "assets/feed.xml",
     styles: [
         "css/style.css",
     ],
