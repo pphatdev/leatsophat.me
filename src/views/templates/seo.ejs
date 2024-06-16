@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="google-site-verification" content="Q0p9T58Q3qt7sLl5v3H_qJqokTE4bdFH6t9o-kqagHk" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74G58FWRVF"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-74G58FWRVF');
+</script>
+<title><%= header.title %></title>
+<meta property="og:title" content="<%= header.title %>">
+<meta name="twitter:title" content="<%= header.title %>" />
+<meta property="og:site_name" content="<%= header.title %>" />
+<meta name="robots" content="follow, index" />
+<meta name="description" content="<%= header.description %>" />
+<meta property="og:description" content="<%= header.description %>" />
+<meta name="twitter:description" content="<%= header.description %>" />
+<meta name="author" content="<%= header.author %>">
+<link rel="canonical" href="<%= header.canonical %>" />
+<meta property="og:url" content="<%= header.canonical %>" />
+<meta property="og:type" content="<%= header.banner.type %>" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="https://twitter.com/infoSophat" />
+<meta property="og:image" content="<%= header.banner.cover %>" />
+<meta name="twitter:image" content="<%= header.banner.cover %>" />
+<link rel="apple-touch-icon" sizes="76x76" href="<%= header.icons.i76x76 %>" />
+<link rel="icon" type="image/png" sizes="32x32" href="<%= header.icons.i32x32 %>" />
+<link rel="icon" type="image/png" sizes="16x16" href="<%= header.icons.i16x16 %>" />
+<link rel="alternate" type="application/rss+xml" title="<%= header.icons.title %> Feed" href="<%= header.feed %>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Suwannaphum:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://pphatdev.github.io/fonts/style.css" rel="stylesheet">
+<meta name="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';">
+<meta name="X-Content-Type-Options" content="nosniff">
+<meta name="X-Frame-Options" content="SAMEORIGIN">
+<meta name="X-XSS-Protection" content="1; report=<reporting-uri>">
+<link rel="icon" href="<%= header.icons.ico %>">
+<meta name="theme-color" content="<%= header.themeColor %>" />
+<link rel="manifest" href="<%= header.mainfest %>" crossorigin="use-credentials" />
+
+<% if (header.styles.length) { %>
+    <% header.styles.forEach(function(style){ %>
+        <link rel="stylesheet" href="<%= style %>">
+    <% }) %>
+<% } %>

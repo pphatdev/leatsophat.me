@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../templates/seo', { header: header }); %>
+</head>
+<body>
+    <%- include('../templates/background-floating.ejs'); %>
+    <%- include('../templates/header', { person: 'John' }); %>
+
+    <div class="relative flex flex-col items-center justify-center h-[calc(100vh_-2rem)] sm:h-[calc(100vh_-8px)] pb-20 sm:pb-0 md:-mt-20 dark:bg-slate-950 transition-bg">
+        <canvas id="canvas" class="absolute inset-0 dark:absolute dark:inset-0"></canvas>
+        <div class="flex flex-col items-center justify-center w-full max-w-6xl px-4 pt-10 mx-auto text-center sm:flex-col gap-7 md:pt-0 md:items-start md:justify-between md:flex-row">
+            <div class="block">
+                <h1 class="relative text-4xl font-bold leading-tight text-gray-800 break-words transition-colors sm:text-left md:text-6xl font-poppins sm:flex-row dark:text-white dark:opacity-80"> Opps! <span class="font-black text-primary-600">404</span></h1>
+                <h1 class="relative mt-10 text-2xl font-bold text-gray-800 break-words transition-colors sm:text-left md:text-3xl font-poppins sm:flex-row dark:text-white dark:opacity-80"> Sorry! The page is not found.</h1>
+                <p class="max-w-md py-4 mt-5 text-sm font-normal lg:max-w-xl md:text-lg sm:text-left dark:text-primary-600 text-slate-600 font-body"> If you want to read more about my information please choose one of the buttons blew.</p>
+                <div class="flex items-center justify-center w-full gap-3 text-center sm:justify-start"><a href="/" class="px-4 active:bg-primary py-1.5 text-xs sm:text-sm transition-colors border rounded-lg border-stone-200 drop-shadow-sm hover:bg-primary-800 text-white bg-primary-700 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400">My Works </a><a href="/" type="button" class="px-4 gap-2 active:bg-primary/10 flex items-center py-1.5 text-xs sm:text-sm transition-colors border rounded-lg border-stone-200 drop-shadow-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/20 backdrop-blur-lg hover:border-stone-300 dark:border-stone-500 dark:hover:border-stone-400"><span>Contact</span></a> </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

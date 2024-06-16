@@ -30,7 +30,7 @@ APP.use(ROUTE)
 /**
  * Defualt End point
 */
-APP.get('*', (request: Request, response: Response) => {
+APP.get('/api/*', (request: Request, response: Response) => {
     response.send(
         {
             status: 200,
