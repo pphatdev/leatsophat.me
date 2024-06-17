@@ -3,8 +3,24 @@
 <head>
     <%- include('../templates/seo', { header: header }); %>
 </head>
-<body>
+<body class="dark:bg-slate-950">
+
     <%- include('../templates/background-floating'); %>
-    <%- include('../templates/header', { person: 'John' }); %>
+    <%- include('../templates/header'); %>
+    <%- include('../templates/hero', { profile: header.author.image }); %>
+
+    <section class="mt-10">
+        <%- include('../templates/heading-section', { first: 'ABOUT DEVELOPMENT', last: 'Skills' }); %>
+
+    </section>
+
+    <section class="mt-10 ">
+        <%- include('../templates/heading-section', { first: 'Publish', last: 'Projects' }); %>
+    </section>
+
+    <section class="mt-10 ">
+        <%- include('../templates/heading-section', { first: 'Publish', last: 'Template' }); %>
+    </section>
+
 </body>
 </html>

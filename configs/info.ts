@@ -4,7 +4,11 @@ export type Info = {
     lang?: string,
     title?: string,
     description?: string,
-    author?: string,
+    author?: {
+        image?: string
+        name?: string
+        url?: string
+    },
     canonical?: string,
     icons?: {
         ico?: string,
@@ -28,9 +32,13 @@ export type Info = {
 export const info = ({
     lang = "en",
     title = "",
-    author = name,
-    description = detail,
     canonical = domain,
+    author = {
+        image: `${canonical}/assets/profile.png`,
+        name: name,
+        url: canonical
+    },
+    description = detail,
     icons = {
         ico :`${canonical}/assets/favicon.ico`,
         i76x76 :`${canonical}/assets/apple-touch-icon.png`,

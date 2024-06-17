@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import { ENV } from './configs/index.js';
 import { ROUTE } from "./src/routes/apis/index.js";
 import { ROUTE as ASSETS } from "./configs/asset.js"
@@ -10,15 +10,17 @@ import { fileURLToPath } from 'url';
 const __filename    = fileURLToPath(import.meta.url);
 const __dirname     = path.dirname(__filename);
 
-// Configure Express to use EJS
-ROUTE.set( "views", path.join( __dirname, "./src/views" ) );
-ROUTE.set( "view engine", "ejs" );
-
 
 /**
  * Defualt End point
 */
 const APP = express();
+
+
+// Configure Express to use EJS
+APP.set( "views", path.join( __dirname, "./src/views" ) );
+APP.set( "view engine", "ejs" );
+
 
 /**
  * Asset Config
@@ -42,6 +44,29 @@ APP.use(API)
  * Initalize Route
 */
 APP.use(ROUTE)
+
+
+/**
+ * Initalize Route
+*/
+APP.all('*', (request, response) => {
+
+    // response.send({
+    //     status: 200,
+    //     method: request.method,
+    //     message: "Hello World!",
+    //     query: request.query,
+    // });
+
+    // response.status(404);
+    // const header = info({
+    //     title: "Not Found",
+    //     canonical: "//" + request.headers.host
+    // })
+
+    response.header('Content-Type', 'text/html')
+    .send('/pages/404.ejs');
+});
 
 
 /**

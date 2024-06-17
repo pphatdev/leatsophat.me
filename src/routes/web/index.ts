@@ -24,13 +24,14 @@ ROUTE.get( "/", ( request, res ) => {
 /**
  * Not Found page or Defualt End point
 */
-ROUTE.all('*', (request, response) => {
-    const header = info({
-        title: "Not Found",
-        canonical: "//" + request.headers.host
-    })
-    response.status(404)
-    .render( "pages/404" , { header: header });
-});
+// ROUTE.all('*', (request, response) => {
+//     const header = info({
+//         title: "Not Found",
+//         canonical: "//" + request.headers.host
+//     })
+//     response.status(404)
+//     .render( "pages/404" , { header: header });
+// });
+
 
 export default ROUTE;
