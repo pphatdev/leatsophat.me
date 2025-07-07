@@ -77,7 +77,7 @@ export default {
                 minify: true,
                 inject: "head",
                 meta:{
-                    "Content-Security-Policy": "default-src 'self'; img-src https://*; child-src 'none';",
+                    "Content-Security-Policy": "default-src 'self' https:; img-src https://*; style-src 'self' https:; child-src 'none';",
                     "X-Content-Type-Options": "nosniff",
                     "X-Frame-Options": "SAMEORIGIN",
                     "X-XSS-Protection": "1; report=<reporting-uri>",
